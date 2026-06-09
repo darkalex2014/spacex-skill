@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+
+# Virtual envs
+venv/
+.venv/
+env/
+
+# Test outputs / logs
+logs/
+*.log
+results/
+__pycache__/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Skill run artifacts (created by run_loop.py / run_eval.py / generate_review.py)
+.pytest_cache/
+.claude/
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+
+# Local config — never commit credentials!
+.env
+.env.local
+*.local
