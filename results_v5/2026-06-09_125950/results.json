@@ -1,0 +1,1390 @@
+{
+  "exit_reason": "max_iterations (5)",
+  "original_description": "\u4e3a\u591a\u516c\u53f8\u6295\u6807\u6a21\u5f0f\u63d0\u4f9b\u53ef\u76f4\u63a5\u4f7f\u7528\u7684\u5dee\u5f02\u5316\u6269\u5199 Prompt \u6a21\u677f\u3002",
+  "best_description": "\u4f7f\u7528\u6b64\u6280\u80fd\uff1a\u4e3a\u96f7\u540c\u6bb5\u843d\u751f\u6210\u5dee\u5f02\u5316\u6269\u5199 Prompt \u6a21\u677f\uff0c\u652f\u6301\u76f4\u63a5\u5582\u7ed9 LLM \u8c03\u7528\u3002\u652f\u6301 B-1 \u4f20\u7edf\u4e25\u8c28\u3001B-2 \u6df1\u5ea6\u5c55\u5f00\u3001B-3 \u7b80\u6d01\u6982\u62ec\u3001B-4 \u6848\u4f8b\u5b9e\u8bc1\u56db\u79cd\u6587\u98ce\u3002\u9002\u7528\u573a\u666f\uff1a\u5df2\u6709\u5f85\u6539\u5199\u6bb5\u843d\uff0c\u60f3\u8ba9 AI \u4ee5\u4e0d\u540c\u8868\u8ff0\u751f\u6210\u8bed\u4e49\u4e00\u81f4\u7684\u7248\u672c\u65f6\uff0c\u8c03\u7528\u6b64\u6a21\u677f\u3002\u6ce8\u610f\uff1a\u6b64\u6280\u80fd\u8f93\u51fa Prompt \u6a21\u677f\u672c\u8eab\uff0c\u4e0d\u5904\u7406 Word \u6587\u6863\u6216\u76f4\u63a5\u751f\u6210\u6587\u4ef6\u3002",
+  "best_score": "8/8",
+  "best_train_score": "9/12",
+  "best_test_score": "8/8",
+  "final_description": "\u83b7\u53d6\u96f7\u540c\u6bb5\u843d\u5dee\u5f02\u5316\u6269\u5199\u7684 Prompt \u6a21\u677f\u3002\u652f\u6301 B-1 \u4f20\u7edf\u4e25\u8c28\u3001B-2 \u6df1\u5ea6\u5c55\u5f00\u3001B-3 \u7b80\u6d01\u6982\u62ec\u3001B-4 \u6848\u4f8b\u5b9e\u8bc1\u56db\u79cd\u6587\u98ce\u3002\u6839\u636e\u96f7\u540c\u7a0b\u5ea6\u81ea\u52a8\u5339\u914d\u6269\u5199\u500d\u6570\u3002\u8f93\u51fa\u4e3a\u53ef\u76f4\u63a5\u5582\u7ed9 LLM \u7684 Prompt \u6a21\u677f\uff0c\u800c\u975e\u76f4\u63a5\u751f\u6210\u6587\u4ef6\u3002",
+  "iterations_run": 5,
+  "holdout": 0.4,
+  "train_size": 12,
+  "test_size": 8,
+  "history": [
+    {
+      "iteration": 1,
+      "description": "\u4e3a\u591a\u516c\u53f8\u6295\u6807\u6a21\u5f0f\u63d0\u4f9b\u53ef\u76f4\u63a5\u4f7f\u7528\u7684\u5dee\u5f02\u5316\u6269\u5199 Prompt \u6a21\u677f\u3002",
+      "train_passed": 9,
+      "train_failed": 3,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "\u6269\u5199\u65f6\u5e94\u8be5\u9009\u54ea\u51e0\u4e2a\u7ef4\u5ea6?\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c\u2014\u2014\u6211\u624b\u4e0a\u662f 70-89% \u96f7\u540c,\u8981\u6269 2 \u500d,\u600e\u4e48\u9009\u7ef4\u5ea6\u7ec4\u5408?\u7ed9\u6211\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u628a\u4e00\u4efd\u5173\u4e8e \u5173\u952e\u5c97\u4f4d\u4eba\u5458\u914d\u7f6e \u7684\u96f7\u540c\u6bb5\u843d,\u7528 B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u6269\u5199 5 \u500d\u3002\u7ed9\u6211\u5177\u4f53\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u6bb5\u843d\u6269\u5199,B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u2014\u2014\u7ed9\u6211 prompt \u6a21\u677f,\u8981\u5305\u542b\u5177\u4f53\u884c\u4e1a\u6848\u4f8b\u5360\u4f4d\u7b26\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u624b\u4e0a\u6709 B-1/B-2/B-3/B-4 \u56db\u79cd\u6587\u98ce\u7684\u6269\u5199 prompt \u5e93\u5417?\u7ed9\u6211\u770b\u770b\u6bcf\u4e2a\u98ce\u683c\u7684\u6838\u5fc3\u6307\u4ee4\u7247\u6bb5\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u516c\u53f8 A \u7528\u4e86 B-2 \u6df1\u5ea6\u5c55\u5f00,\u516c\u53f8 B \u7528 B-3 \u7b80\u6d01\u6982\u62ec\u2014\u2014\u8fd9\u4e24\u79cd\u98ce\u683c\u5404\u81ea\u7684 prompt \u600e\u4e48\u5199?\u7ed9\u6211\u5bf9\u6bd4\u7684\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9 70-89% \u4e2d\u5ea6\u96f7\u540c\u7684\u6bb5\u843d\u7528 B-4 \u6848\u4f8b\u5b9e\u8bc1\u98ce\u683c\u6269\u5199 2 \u500d\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u80fd\u76f4\u63a5\u5582\u7ed9 LLM \u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u4e3b\u516c\u53f8 V4.docx \u5df2\u7ecf\u5199\u597d\u4e86,\u5e2e\u6211\u751f\u6210 A \u516c\u53f8\u548c B \u516c\u53f8\u7684\u5dee\u5f02\u5316\u7248\u672c(\u8981\u9632\u56f4\u6807\u4e32\u6807)\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62db\u6807\u8bf4\u9700\u8981\u6570\u636e\u6cbb\u7406+\u53ef\u89c6\u5316\u5927\u5c4f+AI \u5206\u6790,\u6211\u4eec\u516c\u53f8\u54ea\u4e9b\u4ea7\u54c1\u80fd\u5339\u914d?",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62db\u6807\u6587\u4ef6\u91cc\u8981\u6c42 CMMI5\u3001ISO9001 \u8fd9\u4e9b\u8d44\u8d28,\u6211\u4eec\u516c\u53f8\u6709\u54ea\u4e9b?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5df2\u7ecf\u57fa\u4e8e\u8bc4\u5206\u70b9\u751f\u6210\u4e86\u521d\u7248\u5e94\u7b54\u6587\u4ef6 V4.docx,\u6309 V4\u2192V5 \u8fed\u4ee3\u89c4\u8303\u5e2e\u6211\u5347\u7ea7\u5230 V5,\u5e76\u81ea\u52a8\u8dd1\u4e32\u6807\u68c0\u6d4b + \u6269\u5199\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u6211\u6709\u4e00\u4e2a\u5e94\u7b54\u6587\u4ef6\u7684\u5185\u5bb9,\u60f3\u8f6c\u6210 PPT \u7ed9\u9886\u5bfc\u6c47\u62a5,\u7528 PptxGenJS \u600e\u4e48\u641e?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5ba2\u6237\u8981\u5b9e\u65f6\u6570\u636e\u540c\u6b65\u3001\u6beb\u79d2\u7ea7\u5ef6\u8fdf,\u6211\u4eec\u76ee\u524d\u4ea7\u54c1\u8fbe\u4e0d\u5230,\u662f\u5426\u8981\u81ea\u7814?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ],
+      "test_passed": 5,
+      "test_failed": 3,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "B-1/B-2/B-3/B-4 \u56db\u79cd\u98ce\u683c\u5404\u81ea\u7684\u6269\u5199\u6307\u4ee4\u7247\u6bb5\u662f\u4ec0\u4e48\u6837?\u7ed9\u6211\u770b\u770b\u6a21\u677f\u5316\u7684\u7248\u672c\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u591a\u516c\u53f8\u6279\u91cf\u6269\u5199\u573a\u666f:\u4e3b\u516c\u53f8 V5 \u7ae0\u8282\u88ab\u68c0\u6d4b\u51fa 90% \u96f7\u540c,\u9700\u8981\u7ed9 A \u516c\u53f8\u548c B \u516c\u53f8\u5404\u6269\u4e00\u4efd\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u5168\u6d41\u7a0b\u6279\u91cf\u5904\u7406\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u7684\u6bb5\u843d,\u6309 5 \u500d\u6269\u5199,\u9700\u8981\u4f20\u7edf\u4e25\u8c28 B-1 \u98ce\u683c\u2014\u2014\u7ed9\u6211 5 \u4e2a\u7ef4\u5ea6(\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c)\u5168\u8986\u76d6\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9\u56e2\u961f\u51c6\u5907\u4e00\u4efd\u5dee\u5f02\u5316\u6269\u5199\u901f\u67e5\u8868\u2014\u2014\u5305\u542b\u96f7\u540c\u7a0b\u5ea6\u2192\u6269\u5199\u500d\u6570\u2192\u7ef4\u5ea6\u7ec4\u5408\u2192\u98ce\u683c\u2014\u2014\u505a\u6210 prompt \u6a21\u677f\u5e93\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u8fd9\u4e2a\u9879\u76ee\u6211\u4eec\u516c\u53f8\u6700\u8fd1\u5728\u8ddf 3 \u4e2a,\u600e\u4e48\u51b3\u5b9a\u54ea\u4e2a\u91cd\u70b9\u6295\u3001\u54ea\u4e2a\u653e\u5f03?",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u600e\u4e48\u7528 python-docx \u521b\u5efa\u4e00\u4e2a\u5e26\u8868\u683c\u7684 docx \u6587\u4ef6?\u7ed9\u4e2a\u793a\u4f8b\u4ee3\u7801\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62ff\u5230\u62db\u6807\u6587\u4ef6\u540e,\u5e2e\u6211\u628a\u91cc\u9762\u8bc4\u5206\u8868\u7684\u6bcf\u4e2a\u8bc4\u5206\u9879\u62c6\u6210\u53ef\u6267\u884c\u4efb\u52a1\u6e05\u5355\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u5e94\u7b54\u6587\u4ef6\u7684\u683c\u5f0f\u8981\u6c42\u5f88\u590d\u6742\u2014\u2014\u5b57\u4f53\u5b57\u53f7\u3001\u9875\u7709\u9875\u811a\u3001\u76ee\u5f55\u683c\u5f0f\u3001\u88c5\u8ba2\u987a\u5e8f\u600e\u4e48\u6574\u7406?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ],
+      "passed": 9,
+      "failed": 3,
+      "total": 12,
+      "results": [
+        {
+          "query": "\u6269\u5199\u65f6\u5e94\u8be5\u9009\u54ea\u51e0\u4e2a\u7ef4\u5ea6?\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c\u2014\u2014\u6211\u624b\u4e0a\u662f 70-89% \u96f7\u540c,\u8981\u6269 2 \u500d,\u600e\u4e48\u9009\u7ef4\u5ea6\u7ec4\u5408?\u7ed9\u6211\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u628a\u4e00\u4efd\u5173\u4e8e \u5173\u952e\u5c97\u4f4d\u4eba\u5458\u914d\u7f6e \u7684\u96f7\u540c\u6bb5\u843d,\u7528 B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u6269\u5199 5 \u500d\u3002\u7ed9\u6211\u5177\u4f53\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u6bb5\u843d\u6269\u5199,B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u2014\u2014\u7ed9\u6211 prompt \u6a21\u677f,\u8981\u5305\u542b\u5177\u4f53\u884c\u4e1a\u6848\u4f8b\u5360\u4f4d\u7b26\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u624b\u4e0a\u6709 B-1/B-2/B-3/B-4 \u56db\u79cd\u6587\u98ce\u7684\u6269\u5199 prompt \u5e93\u5417?\u7ed9\u6211\u770b\u770b\u6bcf\u4e2a\u98ce\u683c\u7684\u6838\u5fc3\u6307\u4ee4\u7247\u6bb5\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u516c\u53f8 A \u7528\u4e86 B-2 \u6df1\u5ea6\u5c55\u5f00,\u516c\u53f8 B \u7528 B-3 \u7b80\u6d01\u6982\u62ec\u2014\u2014\u8fd9\u4e24\u79cd\u98ce\u683c\u5404\u81ea\u7684 prompt \u600e\u4e48\u5199?\u7ed9\u6211\u5bf9\u6bd4\u7684\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9 70-89% \u4e2d\u5ea6\u96f7\u540c\u7684\u6bb5\u843d\u7528 B-4 \u6848\u4f8b\u5b9e\u8bc1\u98ce\u683c\u6269\u5199 2 \u500d\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u80fd\u76f4\u63a5\u5582\u7ed9 LLM \u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u4e3b\u516c\u53f8 V4.docx \u5df2\u7ecf\u5199\u597d\u4e86,\u5e2e\u6211\u751f\u6210 A \u516c\u53f8\u548c B \u516c\u53f8\u7684\u5dee\u5f02\u5316\u7248\u672c(\u8981\u9632\u56f4\u6807\u4e32\u6807)\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62db\u6807\u8bf4\u9700\u8981\u6570\u636e\u6cbb\u7406+\u53ef\u89c6\u5316\u5927\u5c4f+AI \u5206\u6790,\u6211\u4eec\u516c\u53f8\u54ea\u4e9b\u4ea7\u54c1\u80fd\u5339\u914d?",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62db\u6807\u6587\u4ef6\u91cc\u8981\u6c42 CMMI5\u3001ISO9001 \u8fd9\u4e9b\u8d44\u8d28,\u6211\u4eec\u516c\u53f8\u6709\u54ea\u4e9b?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5df2\u7ecf\u57fa\u4e8e\u8bc4\u5206\u70b9\u751f\u6210\u4e86\u521d\u7248\u5e94\u7b54\u6587\u4ef6 V4.docx,\u6309 V4\u2192V5 \u8fed\u4ee3\u89c4\u8303\u5e2e\u6211\u5347\u7ea7\u5230 V5,\u5e76\u81ea\u52a8\u8dd1\u4e32\u6807\u68c0\u6d4b + \u6269\u5199\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u6211\u6709\u4e00\u4e2a\u5e94\u7b54\u6587\u4ef6\u7684\u5185\u5bb9,\u60f3\u8f6c\u6210 PPT \u7ed9\u9886\u5bfc\u6c47\u62a5,\u7528 PptxGenJS \u600e\u4e48\u641e?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5ba2\u6237\u8981\u5b9e\u65f6\u6570\u636e\u540c\u6b65\u3001\u6beb\u79d2\u7ea7\u5ef6\u8fdf,\u6211\u4eec\u76ee\u524d\u4ea7\u54c1\u8fbe\u4e0d\u5230,\u662f\u5426\u8981\u81ea\u7814?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "description": "\u5c06\u6295\u6807\u6587\u4ef6\u4e2d\u68c0\u6d4b\u51fa\u7684\u96f7\u540c\u6bb5\u843d\uff0c\u6269\u5199\u6210\u4e0d\u540c\u8868\u8ff0\u4f46\u8bed\u4e49\u4e00\u81f4\u7684\u7248\u672c\uff0c\u9632\u56f4\u6807\u4e32\u6807\u3002\u63d0\u4f9b B-1 \u4f20\u7edf\u4e25\u8c28\u3001B-2 \u6df1\u5ea6\u5c55\u5f00\u3001B-3 \u7b80\u6d01\u6982\u62ec\u3001B-4 \u6848\u4f8b\u5b9e\u8bc1\u56db\u79cd\u6587\u98ce\u6a21\u677f\uff0c\u6309 100%/90-99%/70-89% \u96f7\u540c\u7b49\u7ea7\u5bf9\u5e94 5 \u500d/4 \u500d/2 \u500d\u6269\u5199\u500d\u6570\u3002\u9002\u7528\u4e8e\u6295\u6807\u6280\u672f\u65b9\u6848\u6587\u6863\u7684\u6bb5\u843d\u5dee\u5f02\u5316\u6539\u5199\u3002",
+      "train_passed": 10,
+      "train_failed": 2,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "\u6211\u60f3\u628a\u4e00\u4efd\u5173\u4e8e \u5173\u952e\u5c97\u4f4d\u4eba\u5458\u914d\u7f6e \u7684\u96f7\u540c\u6bb5\u843d,\u7528 B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u6269\u5199 5 \u500d\u3002\u7ed9\u6211\u5177\u4f53\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6269\u5199\u65f6\u5e94\u8be5\u9009\u54ea\u51e0\u4e2a\u7ef4\u5ea6?\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c\u2014\u2014\u6211\u624b\u4e0a\u662f 70-89% \u96f7\u540c,\u8981\u6269 2 \u500d,\u600e\u4e48\u9009\u7ef4\u5ea6\u7ec4\u5408?\u7ed9\u6211\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u6bb5\u843d\u6269\u5199,B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u2014\u2014\u7ed9\u6211 prompt \u6a21\u677f,\u8981\u5305\u542b\u5177\u4f53\u884c\u4e1a\u6848\u4f8b\u5360\u4f4d\u7b26\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u624b\u4e0a\u6709 B-1/B-2/B-3/B-4 \u56db\u79cd\u6587\u98ce\u7684\u6269\u5199 prompt \u5e93\u5417?\u7ed9\u6211\u770b\u770b\u6bcf\u4e2a\u98ce\u683c\u7684\u6838\u5fc3\u6307\u4ee4\u7247\u6bb5\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9 70-89% \u4e2d\u5ea6\u96f7\u540c\u7684\u6bb5\u843d\u7528 B-4 \u6848\u4f8b\u5b9e\u8bc1\u98ce\u683c\u6269\u5199 2 \u500d\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u80fd\u76f4\u63a5\u5582\u7ed9 LLM \u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u516c\u53f8 A \u7528\u4e86 B-2 \u6df1\u5ea6\u5c55\u5f00,\u516c\u53f8 B \u7528 B-3 \u7b80\u6d01\u6982\u62ec\u2014\u2014\u8fd9\u4e24\u79cd\u98ce\u683c\u5404\u81ea\u7684 prompt \u600e\u4e48\u5199?\u7ed9\u6211\u5bf9\u6bd4\u7684\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u4e3b\u516c\u53f8 V4.docx \u5df2\u7ecf\u5199\u597d\u4e86,\u5e2e\u6211\u751f\u6210 A \u516c\u53f8\u548c B \u516c\u53f8\u7684\u5dee\u5f02\u5316\u7248\u672c(\u8981\u9632\u56f4\u6807\u4e32\u6807)\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62db\u6807\u6587\u4ef6\u91cc\u8981\u6c42 CMMI5\u3001ISO9001 \u8fd9\u4e9b\u8d44\u8d28,\u6211\u4eec\u516c\u53f8\u6709\u54ea\u4e9b?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u62db\u6807\u8bf4\u9700\u8981\u6570\u636e\u6cbb\u7406+\u53ef\u89c6\u5316\u5927\u5c4f+AI \u5206\u6790,\u6211\u4eec\u516c\u53f8\u54ea\u4e9b\u4ea7\u54c1\u80fd\u5339\u914d?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5df2\u7ecf\u57fa\u4e8e\u8bc4\u5206\u70b9\u751f\u6210\u4e86\u521d\u7248\u5e94\u7b54\u6587\u4ef6 V4.docx,\u6309 V4\u2192V5 \u8fed\u4ee3\u89c4\u8303\u5e2e\u6211\u5347\u7ea7\u5230 V5,\u5e76\u81ea\u52a8\u8dd1\u4e32\u6807\u68c0\u6d4b + \u6269\u5199\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u6211\u6709\u4e00\u4e2a\u5e94\u7b54\u6587\u4ef6\u7684\u5185\u5bb9,\u60f3\u8f6c\u6210 PPT \u7ed9\u9886\u5bfc\u6c47\u62a5,\u7528 PptxGenJS \u600e\u4e48\u641e?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5ba2\u6237\u8981\u5b9e\u65f6\u6570\u636e\u540c\u6b65\u3001\u6beb\u79d2\u7ea7\u5ef6\u8fdf,\u6211\u4eec\u76ee\u524d\u4ea7\u54c1\u8fbe\u4e0d\u5230,\u662f\u5426\u8981\u81ea\u7814?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ],
+      "test_passed": 7,
+      "test_failed": 1,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "B-1/B-2/B-3/B-4 \u56db\u79cd\u98ce\u683c\u5404\u81ea\u7684\u6269\u5199\u6307\u4ee4\u7247\u6bb5\u662f\u4ec0\u4e48\u6837?\u7ed9\u6211\u770b\u770b\u6a21\u677f\u5316\u7684\u7248\u672c\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u591a\u516c\u53f8\u6279\u91cf\u6269\u5199\u573a\u666f:\u4e3b\u516c\u53f8 V5 \u7ae0\u8282\u88ab\u68c0\u6d4b\u51fa 90% \u96f7\u540c,\u9700\u8981\u7ed9 A \u516c\u53f8\u548c B \u516c\u53f8\u5404\u6269\u4e00\u4efd\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u5168\u6d41\u7a0b\u6279\u91cf\u5904\u7406\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u7684\u6bb5\u843d,\u6309 5 \u500d\u6269\u5199,\u9700\u8981\u4f20\u7edf\u4e25\u8c28 B-1 \u98ce\u683c\u2014\u2014\u7ed9\u6211 5 \u4e2a\u7ef4\u5ea6(\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c)\u5168\u8986\u76d6\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9\u56e2\u961f\u51c6\u5907\u4e00\u4efd\u5dee\u5f02\u5316\u6269\u5199\u901f\u67e5\u8868\u2014\u2014\u5305\u542b\u96f7\u540c\u7a0b\u5ea6\u2192\u6269\u5199\u500d\u6570\u2192\u7ef4\u5ea6\u7ec4\u5408\u2192\u98ce\u683c\u2014\u2014\u505a\u6210 prompt \u6a21\u677f\u5e93\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u8fd9\u4e2a\u9879\u76ee\u6211\u4eec\u516c\u53f8\u6700\u8fd1\u5728\u8ddf 3 \u4e2a,\u600e\u4e48\u51b3\u5b9a\u54ea\u4e2a\u91cd\u70b9\u6295\u3001\u54ea\u4e2a\u653e\u5f03?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u600e\u4e48\u7528 python-docx \u521b\u5efa\u4e00\u4e2a\u5e26\u8868\u683c\u7684 docx \u6587\u4ef6?\u7ed9\u4e2a\u793a\u4f8b\u4ee3\u7801\u3002",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u62ff\u5230\u62db\u6807\u6587\u4ef6\u540e,\u5e2e\u6211\u628a\u91cc\u9762\u8bc4\u5206\u8868\u7684\u6bcf\u4e2a\u8bc4\u5206\u9879\u62c6\u6210\u53ef\u6267\u884c\u4efb\u52a1\u6e05\u5355\u3002",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5e94\u7b54\u6587\u4ef6\u7684\u683c\u5f0f\u8981\u6c42\u5f88\u590d\u6742\u2014\u2014\u5b57\u4f53\u5b57\u53f7\u3001\u9875\u7709\u9875\u811a\u3001\u76ee\u5f55\u683c\u5f0f\u3001\u88c5\u8ba2\u987a\u5e8f\u600e\u4e48\u6574\u7406?",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        }
+      ],
+      "passed": 10,
+      "failed": 2,
+      "total": 12,
+      "results": [
+        {
+          "query": "\u6211\u60f3\u628a\u4e00\u4efd\u5173\u4e8e \u5173\u952e\u5c97\u4f4d\u4eba\u5458\u914d\u7f6e \u7684\u96f7\u540c\u6bb5\u843d,\u7528 B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u6269\u5199 5 \u500d\u3002\u7ed9\u6211\u5177\u4f53\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6269\u5199\u65f6\u5e94\u8be5\u9009\u54ea\u51e0\u4e2a\u7ef4\u5ea6?\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c\u2014\u2014\u6211\u624b\u4e0a\u662f 70-89% \u96f7\u540c,\u8981\u6269 2 \u500d,\u600e\u4e48\u9009\u7ef4\u5ea6\u7ec4\u5408?\u7ed9\u6211\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u6bb5\u843d\u6269\u5199,B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u2014\u2014\u7ed9\u6211 prompt \u6a21\u677f,\u8981\u5305\u542b\u5177\u4f53\u884c\u4e1a\u6848\u4f8b\u5360\u4f4d\u7b26\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u624b\u4e0a\u6709 B-1/B-2/B-3/B-4 \u56db\u79cd\u6587\u98ce\u7684\u6269\u5199 prompt \u5e93\u5417?\u7ed9\u6211\u770b\u770b\u6bcf\u4e2a\u98ce\u683c\u7684\u6838\u5fc3\u6307\u4ee4\u7247\u6bb5\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9 70-89% \u4e2d\u5ea6\u96f7\u540c\u7684\u6bb5\u843d\u7528 B-4 \u6848\u4f8b\u5b9e\u8bc1\u98ce\u683c\u6269\u5199 2 \u500d\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u80fd\u76f4\u63a5\u5582\u7ed9 LLM \u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u516c\u53f8 A \u7528\u4e86 B-2 \u6df1\u5ea6\u5c55\u5f00,\u516c\u53f8 B \u7528 B-3 \u7b80\u6d01\u6982\u62ec\u2014\u2014\u8fd9\u4e24\u79cd\u98ce\u683c\u5404\u81ea\u7684 prompt \u600e\u4e48\u5199?\u7ed9\u6211\u5bf9\u6bd4\u7684\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u4e3b\u516c\u53f8 V4.docx \u5df2\u7ecf\u5199\u597d\u4e86,\u5e2e\u6211\u751f\u6210 A \u516c\u53f8\u548c B \u516c\u53f8\u7684\u5dee\u5f02\u5316\u7248\u672c(\u8981\u9632\u56f4\u6807\u4e32\u6807)\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62db\u6807\u6587\u4ef6\u91cc\u8981\u6c42 CMMI5\u3001ISO9001 \u8fd9\u4e9b\u8d44\u8d28,\u6211\u4eec\u516c\u53f8\u6709\u54ea\u4e9b?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u62db\u6807\u8bf4\u9700\u8981\u6570\u636e\u6cbb\u7406+\u53ef\u89c6\u5316\u5927\u5c4f+AI \u5206\u6790,\u6211\u4eec\u516c\u53f8\u54ea\u4e9b\u4ea7\u54c1\u80fd\u5339\u914d?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5df2\u7ecf\u57fa\u4e8e\u8bc4\u5206\u70b9\u751f\u6210\u4e86\u521d\u7248\u5e94\u7b54\u6587\u4ef6 V4.docx,\u6309 V4\u2192V5 \u8fed\u4ee3\u89c4\u8303\u5e2e\u6211\u5347\u7ea7\u5230 V5,\u5e76\u81ea\u52a8\u8dd1\u4e32\u6807\u68c0\u6d4b + \u6269\u5199\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u6211\u6709\u4e00\u4e2a\u5e94\u7b54\u6587\u4ef6\u7684\u5185\u5bb9,\u60f3\u8f6c\u6210 PPT \u7ed9\u9886\u5bfc\u6c47\u62a5,\u7528 PptxGenJS \u600e\u4e48\u641e?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5ba2\u6237\u8981\u5b9e\u65f6\u6570\u636e\u540c\u6b65\u3001\u6beb\u79d2\u7ea7\u5ef6\u8fdf,\u6211\u4eec\u76ee\u524d\u4ea7\u54c1\u8fbe\u4e0d\u5230,\u662f\u5426\u8981\u81ea\u7814?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "description": "\u4f7f\u7528\u6b64\u6280\u80fd\uff1a\u4e3a\u591a\u516c\u53f8\u6295\u6807\u6587\u4ef6\u4e2d\u7684\u96f7\u540c\u6bb5\u843d\u751f\u6210\u5dee\u5f02\u5316\u6269\u5199 Prompt \u6a21\u677f\u3002\u652f\u6301\u4f20\u7edf\u4e25\u8c28\u3001\u6df1\u5ea6\u5c55\u5f00\u3001\u7b80\u6d01\u6982\u62ec\u3001\u6848\u4f8b\u5b9e\u8bc1\u56db\u79cd\u6587\u98ce\uff0c\u6839\u636e\u96f7\u540c\u7a0b\u5ea6\u81ea\u52a8\u5339\u914d\u6269\u5199\u500d\u6570\u3002\u9002\u7528\u573a\u666f\uff1a\u5df2\u6709\u96f7\u540c\u6bb5\u843d\u9700\u8981\u6539\u5199\uff0c\u60f3\u8ba9 AI \u751f\u6210\u8868\u8ff0\u4e0d\u540c\u4f46\u8bed\u4e49\u4e00\u81f4\u7684\u7248\u672c\u65f6\uff0c\u76f4\u63a5\u8c03\u7528\u6a21\u677f\u5373\u53ef\u3002\u8f93\u51fa\u4e3a\u53ef\u76f4\u63a5\u5582\u7ed9 LLM \u7684 Prompt\uff0c\u800c\u975e\u76f4\u63a5\u5904\u7406 Word \u6587\u6863\u3002",
+      "train_passed": 9,
+      "train_failed": 3,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "\u6211\u60f3\u628a\u4e00\u4efd\u5173\u4e8e \u5173\u952e\u5c97\u4f4d\u4eba\u5458\u914d\u7f6e \u7684\u96f7\u540c\u6bb5\u843d,\u7528 B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u6269\u5199 5 \u500d\u3002\u7ed9\u6211\u5177\u4f53\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6269\u5199\u65f6\u5e94\u8be5\u9009\u54ea\u51e0\u4e2a\u7ef4\u5ea6?\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c\u2014\u2014\u6211\u624b\u4e0a\u662f 70-89% \u96f7\u540c,\u8981\u6269 2 \u500d,\u600e\u4e48\u9009\u7ef4\u5ea6\u7ec4\u5408?\u7ed9\u6211\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u624b\u4e0a\u6709 B-1/B-2/B-3/B-4 \u56db\u79cd\u6587\u98ce\u7684\u6269\u5199 prompt \u5e93\u5417?\u7ed9\u6211\u770b\u770b\u6bcf\u4e2a\u98ce\u683c\u7684\u6838\u5fc3\u6307\u4ee4\u7247\u6bb5\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u6bb5\u843d\u6269\u5199,B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u2014\u2014\u7ed9\u6211 prompt \u6a21\u677f,\u8981\u5305\u542b\u5177\u4f53\u884c\u4e1a\u6848\u4f8b\u5360\u4f4d\u7b26\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u516c\u53f8 A \u7528\u4e86 B-2 \u6df1\u5ea6\u5c55\u5f00,\u516c\u53f8 B \u7528 B-3 \u7b80\u6d01\u6982\u62ec\u2014\u2014\u8fd9\u4e24\u79cd\u98ce\u683c\u5404\u81ea\u7684 prompt \u600e\u4e48\u5199?\u7ed9\u6211\u5bf9\u6bd4\u7684\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9 70-89% \u4e2d\u5ea6\u96f7\u540c\u7684\u6bb5\u843d\u7528 B-4 \u6848\u4f8b\u5b9e\u8bc1\u98ce\u683c\u6269\u5199 2 \u500d\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u80fd\u76f4\u63a5\u5582\u7ed9 LLM \u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u62db\u6807\u8bf4\u9700\u8981\u6570\u636e\u6cbb\u7406+\u53ef\u89c6\u5316\u5927\u5c4f+AI \u5206\u6790,\u6211\u4eec\u516c\u53f8\u54ea\u4e9b\u4ea7\u54c1\u80fd\u5339\u914d?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u4e3b\u516c\u53f8 V4.docx \u5df2\u7ecf\u5199\u597d\u4e86,\u5e2e\u6211\u751f\u6210 A \u516c\u53f8\u548c B \u516c\u53f8\u7684\u5dee\u5f02\u5316\u7248\u672c(\u8981\u9632\u56f4\u6807\u4e32\u6807)\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62db\u6807\u6587\u4ef6\u91cc\u8981\u6c42 CMMI5\u3001ISO9001 \u8fd9\u4e9b\u8d44\u8d28,\u6211\u4eec\u516c\u53f8\u6709\u54ea\u4e9b?",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u5df2\u7ecf\u57fa\u4e8e\u8bc4\u5206\u70b9\u751f\u6210\u4e86\u521d\u7248\u5e94\u7b54\u6587\u4ef6 V4.docx,\u6309 V4\u2192V5 \u8fed\u4ee3\u89c4\u8303\u5e2e\u6211\u5347\u7ea7\u5230 V5,\u5e76\u81ea\u52a8\u8dd1\u4e32\u6807\u68c0\u6d4b + \u6269\u5199\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u6211\u6709\u4e00\u4e2a\u5e94\u7b54\u6587\u4ef6\u7684\u5185\u5bb9,\u60f3\u8f6c\u6210 PPT \u7ed9\u9886\u5bfc\u6c47\u62a5,\u7528 PptxGenJS \u600e\u4e48\u641e?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5ba2\u6237\u8981\u5b9e\u65f6\u6570\u636e\u540c\u6b65\u3001\u6beb\u79d2\u7ea7\u5ef6\u8fdf,\u6211\u4eec\u76ee\u524d\u4ea7\u54c1\u8fbe\u4e0d\u5230,\u662f\u5426\u8981\u81ea\u7814?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ],
+      "test_passed": 6,
+      "test_failed": 2,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "B-1/B-2/B-3/B-4 \u56db\u79cd\u98ce\u683c\u5404\u81ea\u7684\u6269\u5199\u6307\u4ee4\u7247\u6bb5\u662f\u4ec0\u4e48\u6837?\u7ed9\u6211\u770b\u770b\u6a21\u677f\u5316\u7684\u7248\u672c\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u591a\u516c\u53f8\u6279\u91cf\u6269\u5199\u573a\u666f:\u4e3b\u516c\u53f8 V5 \u7ae0\u8282\u88ab\u68c0\u6d4b\u51fa 90% \u96f7\u540c,\u9700\u8981\u7ed9 A \u516c\u53f8\u548c B \u516c\u53f8\u5404\u6269\u4e00\u4efd\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u5168\u6d41\u7a0b\u6279\u91cf\u5904\u7406\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u7684\u6bb5\u843d,\u6309 5 \u500d\u6269\u5199,\u9700\u8981\u4f20\u7edf\u4e25\u8c28 B-1 \u98ce\u683c\u2014\u2014\u7ed9\u6211 5 \u4e2a\u7ef4\u5ea6(\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c)\u5168\u8986\u76d6\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9\u56e2\u961f\u51c6\u5907\u4e00\u4efd\u5dee\u5f02\u5316\u6269\u5199\u901f\u67e5\u8868\u2014\u2014\u5305\u542b\u96f7\u540c\u7a0b\u5ea6\u2192\u6269\u5199\u500d\u6570\u2192\u7ef4\u5ea6\u7ec4\u5408\u2192\u98ce\u683c\u2014\u2014\u505a\u6210 prompt \u6a21\u677f\u5e93\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u8fd9\u4e2a\u9879\u76ee\u6211\u4eec\u516c\u53f8\u6700\u8fd1\u5728\u8ddf 3 \u4e2a,\u600e\u4e48\u51b3\u5b9a\u54ea\u4e2a\u91cd\u70b9\u6295\u3001\u54ea\u4e2a\u653e\u5f03?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u600e\u4e48\u7528 python-docx \u521b\u5efa\u4e00\u4e2a\u5e26\u8868\u683c\u7684 docx \u6587\u4ef6?\u7ed9\u4e2a\u793a\u4f8b\u4ee3\u7801\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62ff\u5230\u62db\u6807\u6587\u4ef6\u540e,\u5e2e\u6211\u628a\u91cc\u9762\u8bc4\u5206\u8868\u7684\u6bcf\u4e2a\u8bc4\u5206\u9879\u62c6\u6210\u53ef\u6267\u884c\u4efb\u52a1\u6e05\u5355\u3002",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5e94\u7b54\u6587\u4ef6\u7684\u683c\u5f0f\u8981\u6c42\u5f88\u590d\u6742\u2014\u2014\u5b57\u4f53\u5b57\u53f7\u3001\u9875\u7709\u9875\u811a\u3001\u76ee\u5f55\u683c\u5f0f\u3001\u88c5\u8ba2\u987a\u5e8f\u600e\u4e48\u6574\u7406?",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        }
+      ],
+      "passed": 9,
+      "failed": 3,
+      "total": 12,
+      "results": [
+        {
+          "query": "\u6211\u60f3\u628a\u4e00\u4efd\u5173\u4e8e \u5173\u952e\u5c97\u4f4d\u4eba\u5458\u914d\u7f6e \u7684\u96f7\u540c\u6bb5\u843d,\u7528 B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u6269\u5199 5 \u500d\u3002\u7ed9\u6211\u5177\u4f53\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6269\u5199\u65f6\u5e94\u8be5\u9009\u54ea\u51e0\u4e2a\u7ef4\u5ea6?\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c\u2014\u2014\u6211\u624b\u4e0a\u662f 70-89% \u96f7\u540c,\u8981\u6269 2 \u500d,\u600e\u4e48\u9009\u7ef4\u5ea6\u7ec4\u5408?\u7ed9\u6211\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u624b\u4e0a\u6709 B-1/B-2/B-3/B-4 \u56db\u79cd\u6587\u98ce\u7684\u6269\u5199 prompt \u5e93\u5417?\u7ed9\u6211\u770b\u770b\u6bcf\u4e2a\u98ce\u683c\u7684\u6838\u5fc3\u6307\u4ee4\u7247\u6bb5\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u6bb5\u843d\u6269\u5199,B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u2014\u2014\u7ed9\u6211 prompt \u6a21\u677f,\u8981\u5305\u542b\u5177\u4f53\u884c\u4e1a\u6848\u4f8b\u5360\u4f4d\u7b26\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u516c\u53f8 A \u7528\u4e86 B-2 \u6df1\u5ea6\u5c55\u5f00,\u516c\u53f8 B \u7528 B-3 \u7b80\u6d01\u6982\u62ec\u2014\u2014\u8fd9\u4e24\u79cd\u98ce\u683c\u5404\u81ea\u7684 prompt \u600e\u4e48\u5199?\u7ed9\u6211\u5bf9\u6bd4\u7684\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9 70-89% \u4e2d\u5ea6\u96f7\u540c\u7684\u6bb5\u843d\u7528 B-4 \u6848\u4f8b\u5b9e\u8bc1\u98ce\u683c\u6269\u5199 2 \u500d\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u80fd\u76f4\u63a5\u5582\u7ed9 LLM \u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u62db\u6807\u8bf4\u9700\u8981\u6570\u636e\u6cbb\u7406+\u53ef\u89c6\u5316\u5927\u5c4f+AI \u5206\u6790,\u6211\u4eec\u516c\u53f8\u54ea\u4e9b\u4ea7\u54c1\u80fd\u5339\u914d?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u4e3b\u516c\u53f8 V4.docx \u5df2\u7ecf\u5199\u597d\u4e86,\u5e2e\u6211\u751f\u6210 A \u516c\u53f8\u548c B \u516c\u53f8\u7684\u5dee\u5f02\u5316\u7248\u672c(\u8981\u9632\u56f4\u6807\u4e32\u6807)\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62db\u6807\u6587\u4ef6\u91cc\u8981\u6c42 CMMI5\u3001ISO9001 \u8fd9\u4e9b\u8d44\u8d28,\u6211\u4eec\u516c\u53f8\u6709\u54ea\u4e9b?",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u5df2\u7ecf\u57fa\u4e8e\u8bc4\u5206\u70b9\u751f\u6210\u4e86\u521d\u7248\u5e94\u7b54\u6587\u4ef6 V4.docx,\u6309 V4\u2192V5 \u8fed\u4ee3\u89c4\u8303\u5e2e\u6211\u5347\u7ea7\u5230 V5,\u5e76\u81ea\u52a8\u8dd1\u4e32\u6807\u68c0\u6d4b + \u6269\u5199\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u6211\u6709\u4e00\u4e2a\u5e94\u7b54\u6587\u4ef6\u7684\u5185\u5bb9,\u60f3\u8f6c\u6210 PPT \u7ed9\u9886\u5bfc\u6c47\u62a5,\u7528 PptxGenJS \u600e\u4e48\u641e?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5ba2\u6237\u8981\u5b9e\u65f6\u6570\u636e\u540c\u6b65\u3001\u6beb\u79d2\u7ea7\u5ef6\u8fdf,\u6211\u4eec\u76ee\u524d\u4ea7\u54c1\u8fbe\u4e0d\u5230,\u662f\u5426\u8981\u81ea\u7814?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "iteration": 4,
+      "description": "\u4f7f\u7528\u6b64\u6280\u80fd\uff1a\u4e3a\u96f7\u540c\u6bb5\u843d\u751f\u6210\u5dee\u5f02\u5316\u6269\u5199 Prompt \u6a21\u677f\uff0c\u652f\u6301\u76f4\u63a5\u5582\u7ed9 LLM \u8c03\u7528\u3002\u652f\u6301 B-1 \u4f20\u7edf\u4e25\u8c28\u3001B-2 \u6df1\u5ea6\u5c55\u5f00\u3001B-3 \u7b80\u6d01\u6982\u62ec\u3001B-4 \u6848\u4f8b\u5b9e\u8bc1\u56db\u79cd\u6587\u98ce\u3002\u9002\u7528\u573a\u666f\uff1a\u5df2\u6709\u5f85\u6539\u5199\u6bb5\u843d\uff0c\u60f3\u8ba9 AI \u4ee5\u4e0d\u540c\u8868\u8ff0\u751f\u6210\u8bed\u4e49\u4e00\u81f4\u7684\u7248\u672c\u65f6\uff0c\u8c03\u7528\u6b64\u6a21\u677f\u3002\u6ce8\u610f\uff1a\u6b64\u6280\u80fd\u8f93\u51fa Prompt \u6a21\u677f\u672c\u8eab\uff0c\u4e0d\u5904\u7406 Word \u6587\u6863\u6216\u76f4\u63a5\u751f\u6210\u6587\u4ef6\u3002",
+      "train_passed": 9,
+      "train_failed": 3,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "\u6211\u60f3\u628a\u4e00\u4efd\u5173\u4e8e \u5173\u952e\u5c97\u4f4d\u4eba\u5458\u914d\u7f6e \u7684\u96f7\u540c\u6bb5\u843d,\u7528 B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u6269\u5199 5 \u500d\u3002\u7ed9\u6211\u5177\u4f53\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6269\u5199\u65f6\u5e94\u8be5\u9009\u54ea\u51e0\u4e2a\u7ef4\u5ea6?\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c\u2014\u2014\u6211\u624b\u4e0a\u662f 70-89% \u96f7\u540c,\u8981\u6269 2 \u500d,\u600e\u4e48\u9009\u7ef4\u5ea6\u7ec4\u5408?\u7ed9\u6211\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u6bb5\u843d\u6269\u5199,B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u2014\u2014\u7ed9\u6211 prompt \u6a21\u677f,\u8981\u5305\u542b\u5177\u4f53\u884c\u4e1a\u6848\u4f8b\u5360\u4f4d\u7b26\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u624b\u4e0a\u6709 B-1/B-2/B-3/B-4 \u56db\u79cd\u6587\u98ce\u7684\u6269\u5199 prompt \u5e93\u5417?\u7ed9\u6211\u770b\u770b\u6bcf\u4e2a\u98ce\u683c\u7684\u6838\u5fc3\u6307\u4ee4\u7247\u6bb5\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u516c\u53f8 A \u7528\u4e86 B-2 \u6df1\u5ea6\u5c55\u5f00,\u516c\u53f8 B \u7528 B-3 \u7b80\u6d01\u6982\u62ec\u2014\u2014\u8fd9\u4e24\u79cd\u98ce\u683c\u5404\u81ea\u7684 prompt \u600e\u4e48\u5199?\u7ed9\u6211\u5bf9\u6bd4\u7684\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9 70-89% \u4e2d\u5ea6\u96f7\u540c\u7684\u6bb5\u843d\u7528 B-4 \u6848\u4f8b\u5b9e\u8bc1\u98ce\u683c\u6269\u5199 2 \u500d\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u80fd\u76f4\u63a5\u5582\u7ed9 LLM \u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u62db\u6807\u8bf4\u9700\u8981\u6570\u636e\u6cbb\u7406+\u53ef\u89c6\u5316\u5927\u5c4f+AI \u5206\u6790,\u6211\u4eec\u516c\u53f8\u54ea\u4e9b\u4ea7\u54c1\u80fd\u5339\u914d?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u4e3b\u516c\u53f8 V4.docx \u5df2\u7ecf\u5199\u597d\u4e86,\u5e2e\u6211\u751f\u6210 A \u516c\u53f8\u548c B \u516c\u53f8\u7684\u5dee\u5f02\u5316\u7248\u672c(\u8981\u9632\u56f4\u6807\u4e32\u6807)\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u5df2\u7ecf\u57fa\u4e8e\u8bc4\u5206\u70b9\u751f\u6210\u4e86\u521d\u7248\u5e94\u7b54\u6587\u4ef6 V4.docx,\u6309 V4\u2192V5 \u8fed\u4ee3\u89c4\u8303\u5e2e\u6211\u5347\u7ea7\u5230 V5,\u5e76\u81ea\u52a8\u8dd1\u4e32\u6807\u68c0\u6d4b + \u6269\u5199\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62db\u6807\u6587\u4ef6\u91cc\u8981\u6c42 CMMI5\u3001ISO9001 \u8fd9\u4e9b\u8d44\u8d28,\u6211\u4eec\u516c\u53f8\u6709\u54ea\u4e9b?",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u6211\u6709\u4e00\u4e2a\u5e94\u7b54\u6587\u4ef6\u7684\u5185\u5bb9,\u60f3\u8f6c\u6210 PPT \u7ed9\u9886\u5bfc\u6c47\u62a5,\u7528 PptxGenJS \u600e\u4e48\u641e?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5ba2\u6237\u8981\u5b9e\u65f6\u6570\u636e\u540c\u6b65\u3001\u6beb\u79d2\u7ea7\u5ef6\u8fdf,\u6211\u4eec\u76ee\u524d\u4ea7\u54c1\u8fbe\u4e0d\u5230,\u662f\u5426\u8981\u81ea\u7814?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ],
+      "test_passed": 8,
+      "test_failed": 0,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "B-1/B-2/B-3/B-4 \u56db\u79cd\u98ce\u683c\u5404\u81ea\u7684\u6269\u5199\u6307\u4ee4\u7247\u6bb5\u662f\u4ec0\u4e48\u6837?\u7ed9\u6211\u770b\u770b\u6a21\u677f\u5316\u7684\u7248\u672c\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u7684\u6bb5\u843d,\u6309 5 \u500d\u6269\u5199,\u9700\u8981\u4f20\u7edf\u4e25\u8c28 B-1 \u98ce\u683c\u2014\u2014\u7ed9\u6211 5 \u4e2a\u7ef4\u5ea6(\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c)\u5168\u8986\u76d6\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u591a\u516c\u53f8\u6279\u91cf\u6269\u5199\u573a\u666f:\u4e3b\u516c\u53f8 V5 \u7ae0\u8282\u88ab\u68c0\u6d4b\u51fa 90% \u96f7\u540c,\u9700\u8981\u7ed9 A \u516c\u53f8\u548c B \u516c\u53f8\u5404\u6269\u4e00\u4efd\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u5168\u6d41\u7a0b\u6279\u91cf\u5904\u7406\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9\u56e2\u961f\u51c6\u5907\u4e00\u4efd\u5dee\u5f02\u5316\u6269\u5199\u901f\u67e5\u8868\u2014\u2014\u5305\u542b\u96f7\u540c\u7a0b\u5ea6\u2192\u6269\u5199\u500d\u6570\u2192\u7ef4\u5ea6\u7ec4\u5408\u2192\u98ce\u683c\u2014\u2014\u505a\u6210 prompt \u6a21\u677f\u5e93\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u8fd9\u4e2a\u9879\u76ee\u6211\u4eec\u516c\u53f8\u6700\u8fd1\u5728\u8ddf 3 \u4e2a,\u600e\u4e48\u51b3\u5b9a\u54ea\u4e2a\u91cd\u70b9\u6295\u3001\u54ea\u4e2a\u653e\u5f03?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u600e\u4e48\u7528 python-docx \u521b\u5efa\u4e00\u4e2a\u5e26\u8868\u683c\u7684 docx \u6587\u4ef6?\u7ed9\u4e2a\u793a\u4f8b\u4ee3\u7801\u3002",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5e94\u7b54\u6587\u4ef6\u7684\u683c\u5f0f\u8981\u6c42\u5f88\u590d\u6742\u2014\u2014\u5b57\u4f53\u5b57\u53f7\u3001\u9875\u7709\u9875\u811a\u3001\u76ee\u5f55\u683c\u5f0f\u3001\u88c5\u8ba2\u987a\u5e8f\u600e\u4e48\u6574\u7406?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u62ff\u5230\u62db\u6807\u6587\u4ef6\u540e,\u5e2e\u6211\u628a\u91cc\u9762\u8bc4\u5206\u8868\u7684\u6bcf\u4e2a\u8bc4\u5206\u9879\u62c6\u6210\u53ef\u6267\u884c\u4efb\u52a1\u6e05\u5355\u3002",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ],
+      "passed": 9,
+      "failed": 3,
+      "total": 12,
+      "results": [
+        {
+          "query": "\u6211\u60f3\u628a\u4e00\u4efd\u5173\u4e8e \u5173\u952e\u5c97\u4f4d\u4eba\u5458\u914d\u7f6e \u7684\u96f7\u540c\u6bb5\u843d,\u7528 B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u6269\u5199 5 \u500d\u3002\u7ed9\u6211\u5177\u4f53\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6269\u5199\u65f6\u5e94\u8be5\u9009\u54ea\u51e0\u4e2a\u7ef4\u5ea6?\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c\u2014\u2014\u6211\u624b\u4e0a\u662f 70-89% \u96f7\u540c,\u8981\u6269 2 \u500d,\u600e\u4e48\u9009\u7ef4\u5ea6\u7ec4\u5408?\u7ed9\u6211\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u6bb5\u843d\u6269\u5199,B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u2014\u2014\u7ed9\u6211 prompt \u6a21\u677f,\u8981\u5305\u542b\u5177\u4f53\u884c\u4e1a\u6848\u4f8b\u5360\u4f4d\u7b26\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u624b\u4e0a\u6709 B-1/B-2/B-3/B-4 \u56db\u79cd\u6587\u98ce\u7684\u6269\u5199 prompt \u5e93\u5417?\u7ed9\u6211\u770b\u770b\u6bcf\u4e2a\u98ce\u683c\u7684\u6838\u5fc3\u6307\u4ee4\u7247\u6bb5\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u516c\u53f8 A \u7528\u4e86 B-2 \u6df1\u5ea6\u5c55\u5f00,\u516c\u53f8 B \u7528 B-3 \u7b80\u6d01\u6982\u62ec\u2014\u2014\u8fd9\u4e24\u79cd\u98ce\u683c\u5404\u81ea\u7684 prompt \u600e\u4e48\u5199?\u7ed9\u6211\u5bf9\u6bd4\u7684\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9 70-89% \u4e2d\u5ea6\u96f7\u540c\u7684\u6bb5\u843d\u7528 B-4 \u6848\u4f8b\u5b9e\u8bc1\u98ce\u683c\u6269\u5199 2 \u500d\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u80fd\u76f4\u63a5\u5582\u7ed9 LLM \u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u62db\u6807\u8bf4\u9700\u8981\u6570\u636e\u6cbb\u7406+\u53ef\u89c6\u5316\u5927\u5c4f+AI \u5206\u6790,\u6211\u4eec\u516c\u53f8\u54ea\u4e9b\u4ea7\u54c1\u80fd\u5339\u914d?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u4e3b\u516c\u53f8 V4.docx \u5df2\u7ecf\u5199\u597d\u4e86,\u5e2e\u6211\u751f\u6210 A \u516c\u53f8\u548c B \u516c\u53f8\u7684\u5dee\u5f02\u5316\u7248\u672c(\u8981\u9632\u56f4\u6807\u4e32\u6807)\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u5df2\u7ecf\u57fa\u4e8e\u8bc4\u5206\u70b9\u751f\u6210\u4e86\u521d\u7248\u5e94\u7b54\u6587\u4ef6 V4.docx,\u6309 V4\u2192V5 \u8fed\u4ee3\u89c4\u8303\u5e2e\u6211\u5347\u7ea7\u5230 V5,\u5e76\u81ea\u52a8\u8dd1\u4e32\u6807\u68c0\u6d4b + \u6269\u5199\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62db\u6807\u6587\u4ef6\u91cc\u8981\u6c42 CMMI5\u3001ISO9001 \u8fd9\u4e9b\u8d44\u8d28,\u6211\u4eec\u516c\u53f8\u6709\u54ea\u4e9b?",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u6211\u6709\u4e00\u4e2a\u5e94\u7b54\u6587\u4ef6\u7684\u5185\u5bb9,\u60f3\u8f6c\u6210 PPT \u7ed9\u9886\u5bfc\u6c47\u62a5,\u7528 PptxGenJS \u600e\u4e48\u641e?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5ba2\u6237\u8981\u5b9e\u65f6\u6570\u636e\u540c\u6b65\u3001\u6beb\u79d2\u7ea7\u5ef6\u8fdf,\u6211\u4eec\u76ee\u524d\u4ea7\u54c1\u8fbe\u4e0d\u5230,\u662f\u5426\u8981\u81ea\u7814?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "iteration": 5,
+      "description": "\u83b7\u53d6\u96f7\u540c\u6bb5\u843d\u5dee\u5f02\u5316\u6269\u5199\u7684 Prompt \u6a21\u677f\u3002\u652f\u6301 B-1 \u4f20\u7edf\u4e25\u8c28\u3001B-2 \u6df1\u5ea6\u5c55\u5f00\u3001B-3 \u7b80\u6d01\u6982\u62ec\u3001B-4 \u6848\u4f8b\u5b9e\u8bc1\u56db\u79cd\u6587\u98ce\u3002\u6839\u636e\u96f7\u540c\u7a0b\u5ea6\u81ea\u52a8\u5339\u914d\u6269\u5199\u500d\u6570\u3002\u8f93\u51fa\u4e3a\u53ef\u76f4\u63a5\u5582\u7ed9 LLM \u7684 Prompt \u6a21\u677f\uff0c\u800c\u975e\u76f4\u63a5\u751f\u6210\u6587\u4ef6\u3002",
+      "train_passed": 11,
+      "train_failed": 1,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "\u6211\u60f3\u628a\u4e00\u4efd\u5173\u4e8e \u5173\u952e\u5c97\u4f4d\u4eba\u5458\u914d\u7f6e \u7684\u96f7\u540c\u6bb5\u843d,\u7528 B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u6269\u5199 5 \u500d\u3002\u7ed9\u6211\u5177\u4f53\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6269\u5199\u65f6\u5e94\u8be5\u9009\u54ea\u51e0\u4e2a\u7ef4\u5ea6?\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c\u2014\u2014\u6211\u624b\u4e0a\u662f 70-89% \u96f7\u540c,\u8981\u6269 2 \u500d,\u600e\u4e48\u9009\u7ef4\u5ea6\u7ec4\u5408?\u7ed9\u6211\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u6bb5\u843d\u6269\u5199,B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u2014\u2014\u7ed9\u6211 prompt \u6a21\u677f,\u8981\u5305\u542b\u5177\u4f53\u884c\u4e1a\u6848\u4f8b\u5360\u4f4d\u7b26\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u624b\u4e0a\u6709 B-1/B-2/B-3/B-4 \u56db\u79cd\u6587\u98ce\u7684\u6269\u5199 prompt \u5e93\u5417?\u7ed9\u6211\u770b\u770b\u6bcf\u4e2a\u98ce\u683c\u7684\u6838\u5fc3\u6307\u4ee4\u7247\u6bb5\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u516c\u53f8 A \u7528\u4e86 B-2 \u6df1\u5ea6\u5c55\u5f00,\u516c\u53f8 B \u7528 B-3 \u7b80\u6d01\u6982\u62ec\u2014\u2014\u8fd9\u4e24\u79cd\u98ce\u683c\u5404\u81ea\u7684 prompt \u600e\u4e48\u5199?\u7ed9\u6211\u5bf9\u6bd4\u7684\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9 70-89% \u4e2d\u5ea6\u96f7\u540c\u7684\u6bb5\u843d\u7528 B-4 \u6848\u4f8b\u5b9e\u8bc1\u98ce\u683c\u6269\u5199 2 \u500d\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u80fd\u76f4\u63a5\u5582\u7ed9 LLM \u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u4e3b\u516c\u53f8 V4.docx \u5df2\u7ecf\u5199\u597d\u4e86,\u5e2e\u6211\u751f\u6210 A \u516c\u53f8\u548c B \u516c\u53f8\u7684\u5dee\u5f02\u5316\u7248\u672c(\u8981\u9632\u56f4\u6807\u4e32\u6807)\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62db\u6807\u8bf4\u9700\u8981\u6570\u636e\u6cbb\u7406+\u53ef\u89c6\u5316\u5927\u5c4f+AI \u5206\u6790,\u6211\u4eec\u516c\u53f8\u54ea\u4e9b\u4ea7\u54c1\u80fd\u5339\u914d?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u62db\u6807\u6587\u4ef6\u91cc\u8981\u6c42 CMMI5\u3001ISO9001 \u8fd9\u4e9b\u8d44\u8d28,\u6211\u4eec\u516c\u53f8\u6709\u54ea\u4e9b?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5df2\u7ecf\u57fa\u4e8e\u8bc4\u5206\u70b9\u751f\u6210\u4e86\u521d\u7248\u5e94\u7b54\u6587\u4ef6 V4.docx,\u6309 V4\u2192V5 \u8fed\u4ee3\u89c4\u8303\u5e2e\u6211\u5347\u7ea7\u5230 V5,\u5e76\u81ea\u52a8\u8dd1\u4e32\u6807\u68c0\u6d4b + \u6269\u5199\u3002",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u6709\u4e00\u4e2a\u5e94\u7b54\u6587\u4ef6\u7684\u5185\u5bb9,\u60f3\u8f6c\u6210 PPT \u7ed9\u9886\u5bfc\u6c47\u62a5,\u7528 PptxGenJS \u600e\u4e48\u641e?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5ba2\u6237\u8981\u5b9e\u65f6\u6570\u636e\u540c\u6b65\u3001\u6beb\u79d2\u7ea7\u5ef6\u8fdf,\u6211\u4eec\u76ee\u524d\u4ea7\u54c1\u8fbe\u4e0d\u5230,\u662f\u5426\u8981\u81ea\u7814?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ],
+      "test_passed": 8,
+      "test_failed": 0,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "B-1/B-2/B-3/B-4 \u56db\u79cd\u98ce\u683c\u5404\u81ea\u7684\u6269\u5199\u6307\u4ee4\u7247\u6bb5\u662f\u4ec0\u4e48\u6837?\u7ed9\u6211\u770b\u770b\u6a21\u677f\u5316\u7684\u7248\u672c\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u7684\u6bb5\u843d,\u6309 5 \u500d\u6269\u5199,\u9700\u8981\u4f20\u7edf\u4e25\u8c28 B-1 \u98ce\u683c\u2014\u2014\u7ed9\u6211 5 \u4e2a\u7ef4\u5ea6(\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c)\u5168\u8986\u76d6\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u591a\u516c\u53f8\u6279\u91cf\u6269\u5199\u573a\u666f:\u4e3b\u516c\u53f8 V5 \u7ae0\u8282\u88ab\u68c0\u6d4b\u51fa 90% \u96f7\u540c,\u9700\u8981\u7ed9 A \u516c\u53f8\u548c B \u516c\u53f8\u5404\u6269\u4e00\u4efd\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u5168\u6d41\u7a0b\u6279\u91cf\u5904\u7406\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9\u56e2\u961f\u51c6\u5907\u4e00\u4efd\u5dee\u5f02\u5316\u6269\u5199\u901f\u67e5\u8868\u2014\u2014\u5305\u542b\u96f7\u540c\u7a0b\u5ea6\u2192\u6269\u5199\u500d\u6570\u2192\u7ef4\u5ea6\u7ec4\u5408\u2192\u98ce\u683c\u2014\u2014\u505a\u6210 prompt \u6a21\u677f\u5e93\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u8fd9\u4e2a\u9879\u76ee\u6211\u4eec\u516c\u53f8\u6700\u8fd1\u5728\u8ddf 3 \u4e2a,\u600e\u4e48\u51b3\u5b9a\u54ea\u4e2a\u91cd\u70b9\u6295\u3001\u54ea\u4e2a\u653e\u5f03?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u600e\u4e48\u7528 python-docx \u521b\u5efa\u4e00\u4e2a\u5e26\u8868\u683c\u7684 docx \u6587\u4ef6?\u7ed9\u4e2a\u793a\u4f8b\u4ee3\u7801\u3002",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5e94\u7b54\u6587\u4ef6\u7684\u683c\u5f0f\u8981\u6c42\u5f88\u590d\u6742\u2014\u2014\u5b57\u4f53\u5b57\u53f7\u3001\u9875\u7709\u9875\u811a\u3001\u76ee\u5f55\u683c\u5f0f\u3001\u88c5\u8ba2\u987a\u5e8f\u600e\u4e48\u6574\u7406?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u62ff\u5230\u62db\u6807\u6587\u4ef6\u540e,\u5e2e\u6211\u628a\u91cc\u9762\u8bc4\u5206\u8868\u7684\u6bcf\u4e2a\u8bc4\u5206\u9879\u62c6\u6210\u53ef\u6267\u884c\u4efb\u52a1\u6e05\u5355\u3002",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ],
+      "passed": 11,
+      "failed": 1,
+      "total": 12,
+      "results": [
+        {
+          "query": "\u6211\u60f3\u628a\u4e00\u4efd\u5173\u4e8e \u5173\u952e\u5c97\u4f4d\u4eba\u5458\u914d\u7f6e \u7684\u96f7\u540c\u6bb5\u843d,\u7528 B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u6269\u5199 5 \u500d\u3002\u7ed9\u6211\u5177\u4f53\u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6269\u5199\u65f6\u5e94\u8be5\u9009\u54ea\u51e0\u4e2a\u7ef4\u5ea6?\u80cc\u666f/\u73b0\u72b6/\u76ee\u6807/\u63aa\u65bd/\u6280\u672f/\u4fdd\u969c\u2014\u2014\u6211\u624b\u4e0a\u662f 70-89% \u96f7\u540c,\u8981\u6269 2 \u500d,\u600e\u4e48\u9009\u7ef4\u5ea6\u7ec4\u5408?\u7ed9\u6211\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "100% \u5b8c\u5168\u96f7\u540c\u6bb5\u843d\u6269\u5199,B-2 \u6df1\u5ea6\u5c55\u5f00\u98ce\u683c\u2014\u2014\u7ed9\u6211 prompt \u6a21\u677f,\u8981\u5305\u542b\u5177\u4f53\u884c\u4e1a\u6848\u4f8b\u5360\u4f4d\u7b26\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u624b\u4e0a\u6709 B-1/B-2/B-3/B-4 \u56db\u79cd\u6587\u98ce\u7684\u6269\u5199 prompt \u5e93\u5417?\u7ed9\u6211\u770b\u770b\u6bcf\u4e2a\u98ce\u683c\u7684\u6838\u5fc3\u6307\u4ee4\u7247\u6bb5\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u516c\u53f8 A \u7528\u4e86 B-2 \u6df1\u5ea6\u5c55\u5f00,\u516c\u53f8 B \u7528 B-3 \u7b80\u6d01\u6982\u62ec\u2014\u2014\u8fd9\u4e24\u79cd\u98ce\u683c\u5404\u81ea\u7684 prompt \u600e\u4e48\u5199?\u7ed9\u6211\u5bf9\u6bd4\u7684\u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u60f3\u7ed9 70-89% \u4e2d\u5ea6\u96f7\u540c\u7684\u6bb5\u843d\u7528 B-4 \u6848\u4f8b\u5b9e\u8bc1\u98ce\u683c\u6269\u5199 2 \u500d\u2014\u2014\u7ed9\u6211\u4e00\u4e2a\u80fd\u76f4\u63a5\u5582\u7ed9 LLM \u7684 prompt \u6a21\u677f\u3002",
+          "should_trigger": true,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u4e3b\u516c\u53f8 V4.docx \u5df2\u7ecf\u5199\u597d\u4e86,\u5e2e\u6211\u751f\u6210 A \u516c\u53f8\u548c B \u516c\u53f8\u7684\u5dee\u5f02\u5316\u7248\u672c(\u8981\u9632\u56f4\u6807\u4e32\u6807)\u3002",
+          "should_trigger": false,
+          "trigger_rate": 1.0,
+          "triggers": 1,
+          "runs": 1,
+          "pass": false
+        },
+        {
+          "query": "\u62db\u6807\u8bf4\u9700\u8981\u6570\u636e\u6cbb\u7406+\u53ef\u89c6\u5316\u5927\u5c4f+AI \u5206\u6790,\u6211\u4eec\u516c\u53f8\u54ea\u4e9b\u4ea7\u54c1\u80fd\u5339\u914d?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u62db\u6807\u6587\u4ef6\u91cc\u8981\u6c42 CMMI5\u3001ISO9001 \u8fd9\u4e9b\u8d44\u8d28,\u6211\u4eec\u516c\u53f8\u6709\u54ea\u4e9b?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5df2\u7ecf\u57fa\u4e8e\u8bc4\u5206\u70b9\u751f\u6210\u4e86\u521d\u7248\u5e94\u7b54\u6587\u4ef6 V4.docx,\u6309 V4\u2192V5 \u8fed\u4ee3\u89c4\u8303\u5e2e\u6211\u5347\u7ea7\u5230 V5,\u5e76\u81ea\u52a8\u8dd1\u4e32\u6807\u68c0\u6d4b + \u6269\u5199\u3002",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u6211\u6709\u4e00\u4e2a\u5e94\u7b54\u6587\u4ef6\u7684\u5185\u5bb9,\u60f3\u8f6c\u6210 PPT \u7ed9\u9886\u5bfc\u6c47\u62a5,\u7528 PptxGenJS \u600e\u4e48\u641e?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        },
+        {
+          "query": "\u5ba2\u6237\u8981\u5b9e\u65f6\u6570\u636e\u540c\u6b65\u3001\u6beb\u79d2\u7ea7\u5ef6\u8fdf,\u6211\u4eec\u76ee\u524d\u4ea7\u54c1\u8fbe\u4e0d\u5230,\u662f\u5426\u8981\u81ea\u7814?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 1,
+          "pass": true
+        }
+      ]
+    }
+  ]
+}

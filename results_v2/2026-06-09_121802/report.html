@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>投标评分点拆解 — Skill Description Optimization</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lora', Georgia, serif;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #faf9f5;
+            color: #141413;
+        }
+        h1 { font-family: 'Poppins', sans-serif; color: #141413; }
+        .explainer {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #e8e6dc;
+            color: #b0aea5;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        .summary {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #e8e6dc;
+        }
+        .summary p { margin: 5px 0; }
+        .best { color: #788c5d; font-weight: bold; }
+        .table-container {
+            overflow-x: auto;
+            width: 100%;
+        }
+        table {
+            border-collapse: collapse;
+            background: white;
+            border: 1px solid #e8e6dc;
+            border-radius: 6px;
+            font-size: 12px;
+            min-width: 100%;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #e8e6dc;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+        th {
+            font-family: 'Poppins', sans-serif;
+            background: #141413;
+            color: #faf9f5;
+            font-weight: 500;
+        }
+        th.test-col {
+            background: #6a9bcc;
+        }
+        th.query-col { min-width: 200px; }
+        td.description {
+            font-family: monospace;
+            font-size: 11px;
+            word-wrap: break-word;
+            max-width: 400px;
+        }
+        td.result {
+            text-align: center;
+            font-size: 16px;
+            min-width: 40px;
+        }
+        td.test-result {
+            background: #f0f6fc;
+        }
+        .pass { color: #788c5d; }
+        .fail { color: #c44; }
+        .rate {
+            font-size: 9px;
+            color: #b0aea5;
+            display: block;
+        }
+        tr:hover { background: #faf9f5; }
+        .score {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .score-good { background: #eef2e8; color: #788c5d; }
+        .score-ok { background: #fef3c7; color: #d97706; }
+        .score-bad { background: #fceaea; color: #c44; }
+        .train-label { color: #b0aea5; font-size: 10px; }
+        .test-label { color: #6a9bcc; font-size: 10px; font-weight: bold; }
+        .best-row { background: #f5f8f2; }
+        th.positive-col { border-bottom: 3px solid #788c5d; }
+        th.negative-col { border-bottom: 3px solid #c44; }
+        th.test-col.positive-col { border-bottom: 3px solid #788c5d; }
+        th.test-col.negative-col { border-bottom: 3px solid #c44; }
+        .legend { font-family: 'Poppins', sans-serif; display: flex; gap: 20px; margin-bottom: 10px; font-size: 13px; align-items: center; }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .legend-swatch { width: 16px; height: 16px; border-radius: 3px; display: inline-block; }
+        .swatch-positive { background: #141413; border-bottom: 3px solid #788c5d; }
+        .swatch-negative { background: #141413; border-bottom: 3px solid #c44; }
+        .swatch-test { background: #6a9bcc; }
+        .swatch-train { background: #141413; }
+    </style>
+</head>
+<body>
+    <h1>投标评分点拆解 — Skill Description Optimization</h1>
+    <div class="explainer">
+        <strong>Optimizing your skill's description.</strong> This page updates automatically as Claude tests different versions of your skill's description. Each row is an iteration — a new description attempt. The columns show test queries: green checkmarks mean the skill triggered correctly (or correctly didn't trigger), red crosses mean it got it wrong. The "Train" score shows performance on queries used to improve the description; the "Test" score shows performance on held-out queries the optimizer hasn't seen. When it's done, Claude will apply the best-performing description to your skill.
+    </div>
+
+    <div class="summary">
+        <p><strong>Original:</strong> 投标评分点拆解——把招标文件的评分表逐条拆为可执行应答任务。 Use this skill whenever the user mentions 评分点、评标办法、评分标准、评分表、应标自检、覆盖得分点、分值对应、得分要点、评分档次、应答映射、招标自检、投标自检, even if they don&#x27;t explicitly ask for &quot;评分点拆解&quot;. 典型请求：&quot;帮我看下这个评分表每个项的满分&quot;、&quot;我们的应答文件覆盖了多少得分点&quot;、&quot;哪些章节需要重点扩写&quot;、&quot;评分表里的模糊档次怎么理解&quot;。 工作流：定位评分标准章节 → 提取评分项字段 → 构建应答映射表 → 识别风险（无覆盖/覆盖不足/偏离/多章节交叉/必答遗漏）→ 输出评分点分析报告。</p>
+        <p class="best"><strong>Best:</strong> 投标评分点拆解——将评分标准逐条解析为可执行的应答任务清单，映射到应答文件章节，识别覆盖风险。
+
+Use this skill when the user wants to:
+- Understand what each scoring criterion means and what earns full marks
+- Check whether their response covers all required scoring points
+- Identify which scoring items align with company strengths or weaknesses
+- Map scoring points to specific chapters in their response document
+- Prioritize sections by score weight
+
+典型请求：&quot;这个评分项的档次怎么理解&quot;、&quot;我们覆盖了多少得分点&quot;、&quot;哪些章节需要重点写&quot;、&quot;技术标里哪几项分值最高&quot;、&quot;根据评分点判断我们的强项弱项&quot;。
+
+不适用于：投标后复盘分析（历史业绩/胜率统计）、文档内容提取、差异化创新策略、公司产品匹配、资质预算分析。</p>
+        <p><strong>Best Score:</strong> 8/8 (test)</p>
+        <p><strong>Iterations:</strong> 5 | <strong>Train:</strong> 12 | <strong>Test:</strong> 8</p>
+    </div>
+
+    <div class="legend">
+        <span style="font-weight:600">Query columns:</span>
+        <span class="legend-item"><span class="legend-swatch swatch-positive"></span> Should trigger</span>
+        <span class="legend-item"><span class="legend-swatch swatch-negative"></span> Should NOT trigger</span>
+        <span class="legend-item"><span class="legend-swatch swatch-train"></span> Train</span>
+        <span class="legend-item"><span class="legend-swatch swatch-test"></span> Test</span>
+    </div>
+
+    <div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Iter</th>
+                <th>Train</th>
+                <th>Test</th>
+                <th class="query-col">Description</th>
+                <th class="positive-col">招标方对&#x27;技术方案完整性&#x27;给了 20 分，但描述写得很模糊——&#x27;方案完整、架构合理、技术先进得 15-20 分；方案基本完整得 8-14 分&#x27;。这种模糊的档次怎么拆？对应答有什么建议？</th>
+                <th class="positive-col">客户要求我们做&#x27;差异化优势应答&#x27;——能否根据评分点判断哪些是我们的强项可以重点放大，哪些是弱项需要规避？</th>
+                <th class="positive-col">我们打算投一个政务云的项目，招标文件 200 页，评分办法在第 8 章。能不能把第 8 章的评分点全拆出来，按&#x27;权重/章节/得分要点/状态&#x27;做个表给我？</th>
+                <th class="positive-col">招标方给了个评分标准，技术标占 60%、商务标 30%、报价 10%。我想知道技术标里哪些是高分项（&gt;5 分），需要重点投入。</th>
+                <th class="positive-col">我刚拿到一份招标文件的 PDF，里面有个评标办法章节，能帮我把里面的评分点逐条拆出来吗？拆完我想知道每个评分项的满分、评分标准、要写在应答文件的哪一章。</th>
+                <th class="positive-col">招标文件评分表里写了&#x27;技术方案 30 分、项目理解 10 分、实施进度 8 分&#x27;，能帮我对应到技术应答文件的章节，并告诉我哪些章节需要重点扩写吗？</th>
+                <th class="negative-col">招标文件的格式要求很复杂——字体字号、页眉页脚、目录格式、装订顺序，能帮我整理一个格式规范吗？</th>
+                <th class="negative-col">招标文件的 200 页里有一半是合规条款、资质要求、合同模板，评分表其实只有几页。我只想看评分表的部分。</th>
+                <th class="negative-col">我们公司有什么产品能匹配这个招标项目的需求？</th>
+                <th class="negative-col">拿到招标文件后，先告诉我这个项目值不值得投——预算多少、我们有没有资质、能不能赚钱。</th>
+                <th class="negative-col">这次投标要做差异化创新——除了&#x27;满足评分点&#x27;，还有什么能让我们脱颖而出的角度？</th>
+                <th class="negative-col">我们公司去年中了 3 个标，每个标的客户行业都不同。复盘下来，发现有共同的强项和弱项，能分析下吗？</th>
+                <th class="test-col positive-col">我有个旧的应答文件草稿和新的招标文件，怎么对比看我的草稿覆盖了评分点的百分之多少？哪些评分项还没覆盖？</th>
+                <th class="test-col positive-col">这次评分表里有&#x27;项目理解&#x27;、&#x27;需求分析&#x27;、&#x27;总体设计&#x27;、&#x27;详细设计&#x27;、&#x27;测试方案&#x27;这些大项，每项 5-15 分不等。能否帮我列个任务清单，分配给团队几个人分别写？</th>
+                <th class="test-col positive-col">评审前最后一次检查——除了&#x27;覆盖所有得分点&#x27;，还有哪些常见的丢分坑？（比如必答条件、资质材料、签字盖章）</th>
+                <th class="test-col positive-col">boss 让我做应标自检——看下我们的技术应答文件有没有覆盖评分表里所有得分点，每个章节的字数和分值是不是匹配。能不能给我一个自检报告？</th>
+                <th class="test-col negative-col">我投标团队的 3 个人怎么分工？任务怎么排期、截止日期怎么倒推？</th>
+                <th class="test-col negative-col">技术应答文件写完怎么转成 PDF？用 PptxGenJS 还是 reportlab？</th>
+                <th class="test-col negative-col">基于这份招标文件的评分点，帮我直接生成技术应答文件的全部章节内容——每个章节 3000 字以上。</th>
+                <th class="test-col negative-col">评审结束后，中标或落标的复盘应该写些什么？哪些数据要归档？</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="">
+                <td>1</td>
+                <td><span class="score score-good">10/12</span></td>
+                <td><span class="score score-ok">6/8</span></td>
+                <td class="description">投标评分点拆解——把招标文件的评分表逐条拆为可执行应答任务。 Use this skill whenever the user mentions 评分点、评标办法、评分标准、评分表、应标自检、覆盖得分点、分值对应、得分要点、评分档次、应答映射、招标自检、投标自检, even if they don&#x27;t explicitly ask for &quot;评分点拆解&quot;. 典型请求：&quot;帮我看下这个评分表每个项的满分&quot;、&quot;我们的应答文件覆盖了多少得分点&quot;、&quot;哪些章节需要重点扩写&quot;、&quot;评分表里的模糊档次怎么理解&quot;。 工作流：定位评分标准章节 → 提取评分项字段 → 构建应答映射表 → 识别风险（无覆盖/覆盖不足/偏离/多章节交叉/必答遗漏）→ 输出评分点分析报告。</td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+            </tr>
+            <tr class="">
+                <td>2</td>
+                <td><span class="score score-good">10/12</span></td>
+                <td><span class="score score-ok">6/8</span></td>
+                <td class="description">投标评分点拆解——将评分标准逐条解析为可执行的应答任务清单，映射到应答文件章节，识别覆盖风险。
+
+Use this skill when the user wants to:
+- Understand what each scoring criterion means and what content earns full marks
+- Check whether their response document covers all required scoring points
+- Identify which sections need strengthening based on scoring weight
+- Map scoring items to specific chapters in their response file
+
+典型请求：&quot;这个评分项的档次怎么理解&quot;、&quot;我们覆盖了多少得分点&quot;、&quot;哪些章节需要重点写&quot;、&quot;技术标里哪几项分值最高&quot;。
+
+不适用于：提取文档中的评分表内容（用文档工具）、差异化创新策略、公司产品匹配、资质预算分析。</td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result fail">✗<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+            </tr>
+            <tr class="best-row">
+                <td>3</td>
+                <td><span class="score score-good">11/12</span></td>
+                <td><span class="score score-good">8/8</span></td>
+                <td class="description">投标评分点拆解——将评分标准逐条解析为可执行的应答任务清单，映射到应答文件章节，识别覆盖风险。
+
+Use this skill when the user wants to:
+- Understand what each scoring criterion means and what earns full marks
+- Check whether their response covers all required scoring points
+- Identify which scoring items align with company strengths or weaknesses
+- Map scoring points to specific chapters in their response document
+- Prioritize sections by score weight
+
+典型请求：&quot;这个评分项的档次怎么理解&quot;、&quot;我们覆盖了多少得分点&quot;、&quot;哪些章节需要重点写&quot;、&quot;技术标里哪几项分值最高&quot;、&quot;根据评分点判断我们的强项弱项&quot;。
+
+不适用于：投标后复盘分析（历史业绩/胜率统计）、文档内容提取、差异化创新策略、公司产品匹配、资质预算分析。</td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result fail">✗<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+            </tr>
+            <tr class="">
+                <td>4</td>
+                <td><span class="score score-good">11/12</span></td>
+                <td><span class="score score-good">7/8</span></td>
+                <td class="description">投标评分点拆解——解析招标文件的评分标准，逐条拆解为可执行的应答任务清单，映射到应答文件章节，识别覆盖风险与得分机会。
+
+Use this skill when the user wants to:
+- 理解评分项含义、判断得分档次标准
+- 检查应答文件是否覆盖所有得分点
+- 根据评分点判断公司强项与弱项
+- 定位各评分项应写在应答文件的哪个章节
+- 按分值权重优先级排序
+
+典型请求：&quot;评分表每个项怎么得满分&quot;、&quot;我们覆盖了多少得分点&quot;、&quot;哪些章节要重点写&quot;、&quot;根据评分点判断强项弱项&quot;、&quot;技术标里哪几项分值最高&quot;。
+
+不适用于：投标后复盘分析、文档内容提取、差异化创新策略、公司产品匹配、资质预算分析。</td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+            </tr>
+            <tr class="">
+                <td>5</td>
+                <td><span class="score score-good">10/12</span></td>
+                <td><span class="score score-good">8/8</span></td>
+                <td class="description">投标评分点拆解——将招标文件的评分标准逐条解析为可执行的应答任务清单，映射到应答文件章节，识别覆盖风险与得分机会。
+
+Use this skill when the user wants to:
+- 理解各评分项的档次划分与得满分的条件
+- 检查应答文件是否覆盖所有得分点、识别遗漏
+- 根据评分点判断公司强项与弱项、确定优先级
+- 映射每个评分项到应答文件的具体章节位置
+- 按分值权重排序，指导应答文件撰写资源分配
+
+典型请求：&quot;评分表每个项怎么得满分&quot;、&quot;我们覆盖了多少得分点&quot;、&quot;哪些章节要重点扩写&quot;、&quot;技术标里哪几项分值最高&quot;。
+
+不适用于：文档中定位/提取评分表内容、差异化创新策略、公司产品匹配、资质预算分析、投标后复盘。</td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+</body>
+</html>

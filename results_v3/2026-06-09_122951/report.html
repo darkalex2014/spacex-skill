@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>投标项目全流程管理 — Skill Description Optimization</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lora', Georgia, serif;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #faf9f5;
+            color: #141413;
+        }
+        h1 { font-family: 'Poppins', sans-serif; color: #141413; }
+        .explainer {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #e8e6dc;
+            color: #b0aea5;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        .summary {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #e8e6dc;
+        }
+        .summary p { margin: 5px 0; }
+        .best { color: #788c5d; font-weight: bold; }
+        .table-container {
+            overflow-x: auto;
+            width: 100%;
+        }
+        table {
+            border-collapse: collapse;
+            background: white;
+            border: 1px solid #e8e6dc;
+            border-radius: 6px;
+            font-size: 12px;
+            min-width: 100%;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #e8e6dc;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+        th {
+            font-family: 'Poppins', sans-serif;
+            background: #141413;
+            color: #faf9f5;
+            font-weight: 500;
+        }
+        th.test-col {
+            background: #6a9bcc;
+        }
+        th.query-col { min-width: 200px; }
+        td.description {
+            font-family: monospace;
+            font-size: 11px;
+            word-wrap: break-word;
+            max-width: 400px;
+        }
+        td.result {
+            text-align: center;
+            font-size: 16px;
+            min-width: 40px;
+        }
+        td.test-result {
+            background: #f0f6fc;
+        }
+        .pass { color: #788c5d; }
+        .fail { color: #c44; }
+        .rate {
+            font-size: 9px;
+            color: #b0aea5;
+            display: block;
+        }
+        tr:hover { background: #faf9f5; }
+        .score {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .score-good { background: #eef2e8; color: #788c5d; }
+        .score-ok { background: #fef3c7; color: #d97706; }
+        .score-bad { background: #fceaea; color: #c44; }
+        .train-label { color: #b0aea5; font-size: 10px; }
+        .test-label { color: #6a9bcc; font-size: 10px; font-weight: bold; }
+        .best-row { background: #f5f8f2; }
+        th.positive-col { border-bottom: 3px solid #788c5d; }
+        th.negative-col { border-bottom: 3px solid #c44; }
+        th.test-col.positive-col { border-bottom: 3px solid #788c5d; }
+        th.test-col.negative-col { border-bottom: 3px solid #c44; }
+        .legend { font-family: 'Poppins', sans-serif; display: flex; gap: 20px; margin-bottom: 10px; font-size: 13px; align-items: center; }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .legend-swatch { width: 16px; height: 16px; border-radius: 3px; display: inline-block; }
+        .swatch-positive { background: #141413; border-bottom: 3px solid #788c5d; }
+        .swatch-negative { background: #141413; border-bottom: 3px solid #c44; }
+        .swatch-test { background: #6a9bcc; }
+        .swatch-train { background: #141413; }
+    </style>
+</head>
+<body>
+    <h1>投标项目全流程管理 — Skill Description Optimization</h1>
+    <div class="explainer">
+        <strong>Optimizing your skill's description.</strong> This page updates automatically as Claude tests different versions of your skill's description. Each row is an iteration — a new description attempt. The columns show test queries: green checkmarks mean the skill triggered correctly (or correctly didn't trigger), red crosses mean it got it wrong. The "Train" score shows performance on queries used to improve the description; the "Test" score shows performance on held-out queries the optimizer hasn't seen. When it's done, Claude will apply the best-performing description to your skill.
+    </div>
+
+    <div class="summary">
+        <p><strong>Original:</strong> 管理投标项目从获取招标文件到交付投标文件的完整生命周期：投标前的招标文件解析与应标判断、投标中的任务分解与进度跟踪、投标后的复盘归档与交接。</p>
+        <p class="best"><strong>Best:</strong> 投标项目的全程项目管理工作：评估应标决策、制定执行计划、分配任务、跟踪进度、协调团队、记录复盘。
+
+适用于：决定是否应标、排任务优先级、监控整体进度、协调多方工作、复盘归档。
+
+不适用于：撰写投标文件内容、提取文档特定章节、产品选型或技术架构决策。</p>
+        <p><strong>Best Score:</strong> 7/8 (test)</p>
+        <p><strong>Iterations:</strong> 5 | <strong>Train:</strong> 12 | <strong>Test:</strong> 8</p>
+    </div>
+
+    <div class="legend">
+        <span style="font-weight:600">Query columns:</span>
+        <span class="legend-item"><span class="legend-swatch swatch-positive"></span> Should trigger</span>
+        <span class="legend-item"><span class="legend-swatch swatch-negative"></span> Should NOT trigger</span>
+        <span class="legend-item"><span class="legend-swatch swatch-train"></span> Train</span>
+        <span class="legend-item"><span class="legend-swatch swatch-test"></span> Test</span>
+    </div>
+
+    <div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Iter</th>
+                <th>Train</th>
+                <th>Test</th>
+                <th class="query-col">Description</th>
+                <th class="positive-col">投标截止日还有 7 天，但还有 60% 的工作没做完——给我排一下接下来每天的进度和优先级。</th>
+                <th class="positive-col">帮我建一个投标项目的目录结构，按 06 标书制作专区的规范来，里面要放招标文件、应答文件、复盘记录这些。</th>
+                <th class="positive-col">我们今年投了 20 个标，中了 3 个，胜率 15%，这个数据怎么看？怎么判断明年该不该继续重点投？</th>
+                <th class="positive-col">我们公司今年中了 5 个标，怎么把这些成功经验沉淀下来，让以后新投标能复用？</th>
+                <th class="positive-col">刚拿到一份招标文件的 PDF，我该先做什么？要从头到尾过一遍吗？</th>
+                <th class="positive-col">我们公司最近在跟 3 个投标项目，怎么决定哪个该重点投、哪个战略性放弃？</th>
+                <th class="negative-col">基于这份招标文件的评分点，帮我直接生成技术应答文件的全部章节内容，每个章节 3000 字以上。</th>
+                <th class="negative-col">我们昨天开了一个投标前的 kick-off 会议，能帮我把会议记录整理成会议纪要？</th>
+                <th class="negative-col">本周我们跟进了 5 个潜在项目，帮我生成一个商机周报给销售总监。</th>
+                <th class="negative-col">拿到招标文件后，能帮我把里面评分表的每个评分项拆成任务清单吗？</th>
+                <th class="negative-col">招标文件的 200 页里有一半是合规条款、资质要求、合同模板，评分表其实只有几页。我只想看评分表的部分。</th>
+                <th class="negative-col">客户招标里说需要&#x27;实时数据同步、毫秒级延迟&#x27;，我们目前的产品达不到，是否要自研？</th>
+                <th class="test-col positive-col">这个项目已经做了 3 周，技术方案、商务材料、报价测算都到了 V3 版本，现在距离截止还有 5 天，接下来怎么走？</th>
+                <th class="test-col positive-col">这个项目已经开标了但是我们没中标，能帮我做一次复盘吗？看看下次怎么改进。</th>
+                <th class="test-col positive-col">招标文件里要求 3 家子公司联合投标（多公司模式），这种情况下我们怎么分工、谁负责哪部分？</th>
+                <th class="test-col positive-col">帮我开一个&#x27;政务云采购&#x27;的投标项目跟踪，从今天开始记录每个阶段的进展。</th>
+                <th class="test-col negative-col">我们想做一个差异化突出的技术方案——除了&#x27;满足评分点&#x27;还有什么角度？</th>
+                <th class="test-col negative-col">招标文件里要求&#x27;CMMI5、ISO9001、信息安全等保三级&#x27;这些资质，我们公司有哪些？</th>
+                <th class="test-col negative-col">招标文件的格式要求很复杂——字体字号、页眉页脚、目录格式、装订顺序，整理一个格式规范。</th>
+                <th class="test-col negative-col">这次招标里客户说要数据治理+可视化大屏+AI 分析，我们公司哪些产品能匹配？</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="">
+                <td>1</td>
+                <td><span class="score score-ok">7/12</span></td>
+                <td><span class="score score-ok">4/8</span></td>
+                <td class="description">管理投标项目从获取招标文件到交付投标文件的完整生命周期：投标前的招标文件解析与应标判断、投标中的任务分解与进度跟踪、投标后的复盘归档与交接。</td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+            </tr>
+            <tr class="">
+                <td>2</td>
+                <td><span class="score score-good">10/12</span></td>
+                <td><span class="score score-ok">5/8</span></td>
+                <td class="description">管理投标项目的完整生命周期：从招标文件分析到应标决策、从任务分解到提交跟踪、从开标复盘到经验归档。
+
+适用于：评估是否值得投标、排任务优先级、跟踪项目进度、协调多人协作、整理复盘归档。
+
+不适用于：直接撰写投标文件正文、提取文档特定内容、产品选型或自研决策等超出项目管理范畴的事项。</td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+            </tr>
+            <tr class="">
+                <td>3</td>
+                <td><span class="score score-good">10/12</span></td>
+                <td><span class="score score-ok">6/8</span></td>
+                <td class="description">管理投标项目的完整生命周期：从获取招标文件到交付投标文件，包括应标决策、进度跟踪、多方协调和复盘归档。
+
+适用场景：判断是否值得投标、制定项目计划与优先级、监控进度、协调团队、记录复盘。
+
+不适用：直接撰写投标文件内容、从招标文件提取特定信息、拆分文档章节、产品选型或技术架构决策。</td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+            </tr>
+            <tr class="best-row">
+                <td>4</td>
+                <td><span class="score score-ok">9/12</span></td>
+                <td><span class="score score-good">7/8</span></td>
+                <td class="description">投标项目的全程项目管理工作：评估应标决策、制定执行计划、分配任务、跟踪进度、协调团队、记录复盘。
+
+适用于：决定是否应标、排任务优先级、监控整体进度、协调多方工作、复盘归档。
+
+不适用于：撰写投标文件内容、提取文档特定章节、产品选型或技术架构决策。</td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result fail">✗<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+            </tr>
+            <tr class="">
+                <td>5</td>
+                <td><span class="score score-ok">8/12</span></td>
+                <td><span class="score score-ok">5/8</span></td>
+                <td class="description">管理投标项目的完整生命周期：从获取招标文件到提交投标文件，包括应标决策、任务分解与分配、进度跟踪、团队协调、复盘归档。
+
+适用场景：判断是否值得投标、制定项目计划与排优先级、监控整体进度、协调多方工作、整理归档投标材料。
+
+不适用：生成销售类周报商机报告、直接撰写投标文件正文内容、从招标文件提取特定章节或条款、产品选型或技术架构决策。</td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result fail">✗<span class="rate">1/1</span></td>
+                <td class="result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">1/1</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+                <td class="result test-result fail">✗<span class="rate">1/1</span></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+</body>
+</html>

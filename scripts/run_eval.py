@@ -134,21 +134,45 @@ def _run_single_query_llm(
 
     The model may emit a `thinking` block first (M2.x always, M3 with
     `thinking: adaptive`); we just look at the final tool_use blocks.
+
+    Retries on 429 RateLimitError with exponential backoff (5s, 10s, 20s, 40s).
+    Other exceptions are reported and return False. This prevents 429s from
+    being silently treated as "did not trigger", which corrupts eval accuracy.
     """
     client = _get_client()
     model_name = model or os.environ.get("LLM_MODEL") or "MiniMax-M2.7-highspeed"
 
-    try:
-        msg = client.messages.create(
-            model=model_name,
-            max_tokens=512,
-            tools=_build_tools(skill_name),
-            tool_choice={"type": "any"},  # force the model to either call the tool or actively decline
-            messages=[{"role": "user", "content": _skill_prompt(query, skill_name, skill_description)}],
-            timeout=timeout,
-        )
-    except Exception as e:
-        print(f"Warning: LLM call failed for query: {e}", file=sys.stderr)
+    import time as _time
+    last_error = None
+    for attempt in range(5):  # 1 try + 4 retries
+        try:
+            msg = client.messages.create(
+                model=model_name,
+                max_tokens=512,
+                tools=_build_tools(skill_name),
+                tool_choice={"type": "any"},  # force the model to either call the tool or actively decline
+                messages=[{"role": "user", "content": _skill_prompt(query, skill_name, skill_description)}],
+                timeout=timeout,
+            )
+            last_error = None
+            break  # success
+        except anthropic.RateLimitError as e:
+            last_error = e
+            wait = 5 * (2 ** attempt)  # 5, 10, 20, 40, 80s
+            print(f"  Rate limited (attempt {attempt+1}/5), waiting {wait}s...", file=sys.stderr)
+            _time.sleep(wait)
+            continue
+        except Exception as e:
+            # Non-retryable: log and bail
+            print(f"Warning: LLM call failed for query: {e}", file=sys.stderr)
+            return False
+
+    if last_error is not None:
+        # All 5 attempts hit 429 — treat as "did not trigger" but tag it.
+        # This is conservative: the description's "should_trigger" status is
+        # unknown, so we use False to be safe (won't inflate precision).
+        # The "Warning" message lets the analyst see this happened.
+        print(f"Warning: gave up on query after 5 rate-limit retries — counting as no-trigger: {last_error}", file=sys.stderr)
         return False
 
     # Look for a consult_skill tool_use with our skill_name
