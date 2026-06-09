@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "type": "should_trigger",
+    "query": "公司A、B、C三个投标人的工商信息、IP地址、设备指纹都查一下,看有没有围标串标风险。",
+    "rationale": "skill 核心场景:多投标人围标合规自检",
+    "should_trigger": true
+  },
+  {
+    "id": 2,
+    "type": "should_trigger",
+    "query": "我们公司准备投标,能不能先对其他几家投标人的工商注册号、统一社会信用代码做交叉核验,看看有没有关联企业同时投标?",
+    "rationale": "工商信息交叉核验(技能核心能力第1条)",
+    "should_trigger": true
+  },
+  {
+    "id": 3,
+    "type": "should_trigger",
+    "query": "这次的招标有三家公司投标,我想做串标风险评估,生成结构化的风险报告(关联关系/IP/文件指纹/报价异常四个维度)。",
+    "rationale": "完整四维度风险报告(skill 显式给出的输出格式)",
+    "should_trigger": true
+  },
+  {
+    "id": 4,
+    "type": "should_trigger",
+    "query": "投标文件里多个公司的报价看起来都偏规律(抱团报价/阶梯报价),能不能做报价异常分析?",
+    "rationale": "报价异常分析(技能核心能力第5条)",
+    "should_trigger": true
+  },
+  {
+    "id": 5,
+    "type": "should_trigger",
+    "query": "我们投标的IP和另一家公司的投标MAC地址撞了,这是不是串标?需要做合规性审查。",
+    "rationale": "电子痕迹风险(IP/MAC 重复),典型围标场景",
+    "should_trigger": true
+  },
+  {
+    "id": 6,
+    "type": "should_trigger",
+    "query": "招标前风险筛查:对意向投标的几家企业做股权穿透,看是否存在关联企业、董事交叉任职。",
+    "rationale": "招标前风险筛查(skill 功能说明显式给出)+ 关联关系识别",
+    "should_trigger": true
+  },
+  {
+    "id": 7,
+    "type": "should_trigger",
+    "query": "采购合规检查:这几家投标企业的文件作者、创建时间、修改痕迹相似度很高,是不是有问题?",
+    "rationale": "文件相似度检测(技能核心能力第4条)+ 采购合规检查场景",
+    "should_trigger": true
+  },
+  {
+    "id": 8,
+    "type": "should_trigger",
+    "query": "投标合规检查:多份投标文件的电子文档特征(作者、创建时间、格式指纹)比对,看看有没有围标痕迹。",
+    "rationale": "文件指纹检测 + 合规检查,完整围标审查流程",
+    "should_trigger": true
+  },
+  {
+    "id": 9,
+    "type": "should_trigger",
+    "query": "公司A和公司B的投标文件相似度95%,电子文档属性又都从同一台电脑导出,这能作为围标证据吗?",
+    "rationale": "文件相似度+电子痕迹双维度围标审查",
+    "should_trigger": true
+  },
+  {
+    "id": 10,
+    "type": "should_trigger",
+    "query": "准备投标前,先做串标风险评估:给我输出结构化的风险评估报告模板,包含基础信息/风险评分/风险项明细/结论建议四块。",
+    "rationale": "skill 显式给出的标准输出格式(报告结构化)",
+    "should_trigger": true
+  },
+  {
+    "id": 11,
+    "type": "should_not_trigger",
+    "expected_skill": "差异化扩写Prompt模板",
+    "query": "主公司V5.docx 跟公司A的投标文件有90%段落雷同,想给公司A做B-2风格差异化扩写——给我一个能用的prompt。",
+    "rationale": "陷阱:差异化防围标用差异化扩写Prompt模板,不是围标检测",
+    "should_trigger": false
+  },
+  {
+    "id": 12,
+    "type": "should_not_trigger",
+    "expected_skill": "技术应答文件批量编制技能",
+    "query": "我们公司要投标,帮我生成技术应答文件——基于招标技术要求生成主公司版本。",
+    "rationale": "陷阱:内容生成是批量编制技能,不是围标检测",
+    "should_trigger": false
+  },
+  {
+    "id": 13,
+    "type": "should_not_trigger",
+    "expected_skill": "Word文档扩写与标题优化技能",
+    "query": "技术应答文件每个章节太单薄,帮我扩写到5倍以上,标题精简到三级。",
+    "rationale": "陷阱:内容扩写是Word扩写技能,不是围标检测",
+    "should_trigger": false
+  },
+  {
+    "id": 14,
+    "type": "should_not_trigger",
+    "expected_skill": "投标文件格式规范手册",
+    "query": "投标文件的字号应该是几号字?行距?页边距?页眉页脚怎么写?",
+    "rationale": "陷阱:格式规范,不是围标合规",
+    "should_trigger": false
+  },
+  {
+    "id": 15,
+    "type": "should_not_trigger",
+    "expected_skill": "投标评分点拆解",
+    "query": "招标文件的评分标准章节,逐条拆成可执行任务清单,映射到应答文件章节。",
+    "rationale": "陷阱:评分点拆解,不是围标审查",
+    "should_trigger": false
+  },
+  {
+    "id": 16,
+    "type": "should_not_trigger",
+    "expected_skill": "招标资质快速识别与提取",
+    "query": "招标要求CMMI5、ISO9001这些资质,我们公司有哪些?哪些缺项?",
+    "rationale": "陷阱:资质识别准备,不是围标检测",
+    "should_trigger": false
+  },
+  {
+    "id": 17,
+    "type": "should_not_trigger",
+    "expected_skill": "客户需求产品匹配分析技能",
+    "query": "招标说需要数据治理+可视化大屏+AI分析,我们公司哪些产品能匹配?",
+    "rationale": "陷阱:产品匹配,不是围标合规",
+    "should_trigger": false
+  },
+  {
+    "id": 18,
+    "type": "should_not_trigger",
+    "expected_skill": "投标项目全流程管理",
+    "query": "我们有个50万的招标项目,招标书读完了,要不要应标?时间够吗?",
+    "rationale": "陷阱:投标前应标决策是流程管理,不是围标检测",
+    "should_trigger": false
+  },
+  {
+    "id": 19,
+    "type": "should_not_trigger",
+    "expected_skill": "docx",
+    "query": "怎么用python-docx读取docx文件的电子文档元数据(作者、创建时间)?",
+    "rationale": "陷阱:通用docx操作,本技能不教具体代码",
+    "should_trigger": false
+  },
+  {
+    "id": 20,
+    "type": "should_not_trigger",
+    "expected_skill": "工商信息查询API",
+    "query": "调用企查查/天眼查API查一家公司的工商注册号、统一社会信用代码,给我个Python示例。",
+    "rationale": "陷阱:具体API调用不是本技能范畴,本技能使用结果而非教调用",
+    "should_trigger": false
+  }
+]

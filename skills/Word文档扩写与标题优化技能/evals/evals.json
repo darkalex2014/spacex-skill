@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "type": "should_trigger",
+    "query": "我们技术应答文件初稿已经生成,现在想把每个章节扩写到原文5倍以上,同时把标题精简到最多三级,有什么方法论?",
+    "rationale": "核心场景:章节五倍扩写 + 标题精简,典型组合触发",
+    "should_trigger": true
+  },
+  {
+    "id": 2,
+    "type": "should_trigger",
+    "query": "投标文件的'项目概述'这一节内容太单薄,能帮我扩写五倍,加上背景/现状/目标/措施/技术/保障这些维度吗?",
+    "rationale": "六维扩写(skill 显式定义的扩写维度矩阵)",
+    "should_trigger": true
+  },
+  {
+    "id": 3,
+    "type": "should_trigger",
+    "query": "技术方案里边的标题层级太深了(有五级),要梳理成最多三级,内容做深度扩充——这块怎么操作?",
+    "rationale": "标题精简 + 内容扩写,技能的双核心",
+    "should_trigger": true
+  },
+  {
+    "id": 4,
+    "type": "should_trigger",
+    "query": "招标要求是政策文件类应答,我想按背景/目标/措施/保障这4个维度把每个章节扩写到5倍,给我一个执行流程。",
+    "rationale": "政策文件类型 + 4维扩写(skill 文档类型识别中的政策文件类)",
+    "should_trigger": true
+  },
+  {
+    "id": 5,
+    "type": "should_trigger",
+    "query": "项目可行性研究报告的'技术可行性'和'经济可行性'两部分要扩写五倍以上,重点补充行业数据和方法论支撑。",
+    "rationale": "项目可行性类(skill 文档类型识别)+ 行业数据补充(扩写素材来源)",
+    "should_trigger": true
+  },
+  {
+    "id": 6,
+    "type": "should_trigger",
+    "query": "项目申报类应答材料需要深度扩写,重点扩'项目背景/目标/内容/预期成效'四块,每个标题下扩5倍内容。",
+    "rationale": "项目申报类(skill 文档类型识别)+ 四块扩写",
+    "should_trigger": true
+  },
+  {
+    "id": 7,
+    "type": "should_trigger",
+    "query": "技术方案类应答文档需要扩写五倍,重点是需求分析、技术路线、架构设计、实施路径——能给我一个系统的扩写框架吗?",
+    "rationale": "技术方案类(skill 文档类型识别)+ 系统框架",
+    "should_trigger": true
+  },
+  {
+    "id": 8,
+    "type": "should_trigger",
+    "query": "扩写后的Word文档标题很乱,有的一级有的三级还有的四级,想统一精简到三级,内容要扩五倍但又不能跑偏业务——怎么做?",
+    "rationale": "标题梳理 + 扩写不偏离业务(skill 核心原则)",
+    "should_trigger": true
+  },
+  {
+    "id": 9,
+    "type": "should_trigger",
+    "query": "我想把一份技术应答Word文档做'五倍扩写 + 三级标题精简',输出要求扩写内容 + 标题优化,二合一一个版本。",
+    "rationale": "核心原则 1:'只输出一个最终版本:扩写内容 + 标题优化二合一'",
+    "should_trigger": true
+  },
+  {
+    "id": 10,
+    "type": "should_trigger",
+    "query": "技术应答文件用 PMBOK 方法论做扩写,怎么把项目管理方法论(范围/进度/成本/质量/风险)融入五倍扩写里?",
+    "rationale": "方法论深度结合(skill 核心原则 4) + 项目管理类文档",
+    "should_trigger": true
+  },
+  {
+    "id": 11,
+    "type": "should_not_trigger",
+    "query": "主公司V5.docx 跟公司A的投标文件有 90% 段落雷同,想给公司A做差异化扩写,用 B-2 风格——给我一个能用的 prompt。",
+    "rationale": "差异化防围标 + B-2 风格:用'差异化扩写Prompt模板'而非本技能",
+    "should_trigger": false
+  },
+  {
+    "id": 12,
+    "type": "should_not_trigger",
+    "query": "帮我做一份客户级对外宣讲的 PPT,需要决策路由、配色字体参考、QA 清单,页数 20 页左右。",
+    "rationale": "PPT 生成:用 pptx-enterprise",
+    "should_trigger": false
+  },
+  {
+    "id": 13,
+    "type": "should_not_trigger",
+    "query": "招标文件的评分标准章节,逐条拆成可执行的应答任务清单,映射到应答文件章节。",
+    "rationale": "评分点拆解:用'投标评分点拆解'",
+    "should_trigger": false
+  },
+  {
+    "id": 14,
+    "type": "should_not_trigger",
+    "query": "公司A、B、C 三个投标人的工商信息、IP 地址、设备指纹,做围标串标风险自检。",
+    "rationale": "串标检测:用'串标检测工程化封装'",
+    "should_trigger": false
+  },
+  {
+    "id": 15,
+    "type": "should_not_trigger",
+    "query": "投标文件字号应该是几号字?行距?页边距?页眉页脚怎么写?",
+    "rationale": "格式自检:用'投标文件格式规范手册'",
+    "should_trigger": false
+  },
+  {
+    "id": 16,
+    "type": "should_not_trigger",
+    "query": "我们有个 50 万的招标项目,招标书读完了,要不要应标?时间够吗?给我评估框架。",
+    "rationale": "投标前评估:用'投标项目全流程管理'",
+    "should_trigger": false
+  },
+  {
+    "id": 17,
+    "type": "should_not_trigger",
+    "query": "我有一篇非投标的政策研究报告(领导讲话稿),内容比较薄,想扩写五倍并精简标题到三级。",
+    "rationale": "通用非投标文档扩写:本技能明确说不适用于'纯非投标通用文档扩写'",
+    "should_trigger": false
+  },
+  {
+    "id": 18,
+    "type": "should_not_trigger",
+    "query": "公司年度质量手册(非投标)要扩写并梳理标题层级,重点是质量标准/流程/控制/改进。",
+    "rationale": "非投标通用扩写 + 文档类型超出投标范畴",
+    "should_trigger": false
+  },
+  {
+    "id": 19,
+    "type": "should_not_trigger",
+    "query": "招标文件是 PDF 格式,想提取里面的评分标准章节并按页码摘出来。",
+    "rationale": "PDF 文档内容提取:本技能只处理 Word,PDF 用 pdf 技能",
+    "should_trigger": false
+  },
+  {
+    "id": 20,
+    "type": "should_not_trigger",
+    "query": "我手里有一份已经写好的技术应答文件,现在要做字体字号行距页边距的格式自检,看下哪些地方不符合招标要求。",
+    "rationale": "格式自检(已扩写完成后):用'投标文件格式规范手册',而非本技能",
+    "should_trigger": false
+  }
+]
