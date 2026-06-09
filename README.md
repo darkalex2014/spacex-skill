@@ -76,4 +76,4 @@ This fork:
 
 ## License
 
-Apache 2.0. See [LICENSE.txt](./LICENSE.txt).
+Apache 2.0. See [tools/my-skill-creator/LICENSE.txt](./tools/my-skill-creator/LICENSE.txt).
