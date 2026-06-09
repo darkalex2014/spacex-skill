@@ -117,3 +117,21 @@ Files you should **NOT** blindly overwrite:
 ## License
 
 Inherits from upstream Apache 2.0.
+
+
+## Run history (2026-06-09)
+
+This fork was used to optimize 8 local 投标 skills end-to-end:
+
+| Skill | Train (best) | Test (best) | Iterations |
+|-------|--------------|-------------|------------|
+| 投标评分点拆解 | 11/12 | 8/8 | 4 |
+| 投标项目全流程管理 | 9/12 | 7/8 | 4 |
+| 技术应答文件批量编制技能 | 12/12 | 7/8 | 5 (all_passed) |
+| 差异化扩写Prompt模板 | 11/12 | 8/8 | 5 (all_passed) |
+| Word文档扩写与标题优化 | 12/12 | 7/8 | 5 (all_passed) |
+| 串标检测工程化封装 | 12/12 | 8/8 | 2 (all_passed) |
+| 投标文件格式规范手册 | 12/12 | 8/8 | 4 (all_passed) |
+| 招标资质快速识别与提取 | 12/12 | 8/8 | 1 (all_passed) |
+
+See `examples/README.md` for a before/after frontmatter diff.
