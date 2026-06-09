@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "type": "should_trigger",
+    "query": "我手里有一份已经写好的技术应答文件,现在要做字体字号行距页边距的格式自检,看下哪些地方不符合招标要求。",
+    "rationale": "skill 核心场景:已写好的投标文件做格式自检",
+    "should_trigger": true
+  },
+  {
+    "id": 2,
+    "type": "should_trigger",
+    "query": "投标文件正文应该用什么字体和字号?行距用1.5倍还是单倍?页边距2.54还是3.17?",
+    "rationale": "技能显式给出的字体/字号/行距/页边距规范表",
+    "should_trigger": true
+  },
+  {
+    "id": 3,
+    "type": "should_trigger",
+    "query": "技术应答文件、商务投标文件、价格标书这三种文件的格式分别有什么不同?字体字号页边距行距?",
+    "rationale": "技能显式给出的各文件类型格式差异表",
+    "should_trigger": true
+  },
+  {
+    "id": 4,
+    "type": "should_trigger",
+    "query": "投标文件目录怎么排?字体用什么?页码怎么标?'目录'两个字中间要不要空格?",
+    "rationale": "目录规范(技能显式章节)",
+    "should_trigger": true
+  },
+  {
+    "id": 5,
+    "type": "should_trigger",
+    "query": "投标文件的盖章要求是什么?封面、骑缝、签字页、变更页分别怎么盖?鲜章和彩色打印章有什么区别?",
+    "rationale": "盖章规范(技能显式章节)",
+    "should_trigger": true
+  },
+  {
+    "id": 6,
+    "type": "should_trigger",
+    "query": "投标文件装订有什么要求?能用订书钉吗?要不要胶装?分册装订每册多少页合适?",
+    "rationale": "装订与包装(技能显式章节)",
+    "should_trigger": true
+  },
+  {
+    "id": 7,
+    "type": "should_trigger",
+    "query": "页眉写项目名称还是公司名称?页码怎么排?宋体几号字?要不要页眉线?",
+    "rationale": "页眉页脚规范(技能显式表格)",
+    "should_trigger": true
+  },
+  {
+    "id": 8,
+    "type": "should_trigger",
+    "query": "我们有一批投标文件要做批量格式修正:全部统一成宋体小四、1.5倍行距、3.17cm页边距。给我个Python脚本。",
+    "rationale": "格式自检脚本 + 批量修正(技能末尾 Python 代码)",
+    "should_trigger": true
+  },
+  {
+    "id": 9,
+    "type": "should_trigger",
+    "query": "投标文件的标题层级规范是什么?一级二级三级分别用什么编号形式?可以混用'1.1.1'和'1.'两种编号吗?",
+    "rationale": "标题层级规范 + 禁止混用编号体系(技能显式规则)",
+    "should_trigger": true
+  },
+  {
+    "id": 10,
+    "type": "should_trigger",
+    "query": "投标文件里图表的规范是什么?图题放上面还是下面?表题呢?编号格式'图1-1'和'表2-3'怎么用?",
+    "rationale": "图表规范(技能显式章节)",
+    "should_trigger": true
+  },
+  {
+    "id": 11,
+    "type": "should_not_trigger",
+    "expected_skill": "Word文档扩写与标题优化技能",
+    "query": "技术应答文件每个章节太单薄,帮我扩写到5倍以上,标题精简到三级。",
+    "rationale": "陷阱:内容扩写是Word扩写技能,本技能只做格式",
+    "should_trigger": false
+  },
+  {
+    "id": 12,
+    "type": "should_not_trigger",
+    "expected_skill": "技术应答文件批量编制技能",
+    "query": "我们公司要投标,基于招标技术要求帮我生成一份完整的技术应答文件。",
+    "rationale": "陷阱:内容生成是批量编制技能,本技能只做格式",
+    "should_trigger": false
+  },
+  {
+    "id": 13,
+    "type": "should_not_trigger",
+    "expected_skill": "差异化扩写Prompt模板",
+    "query": "主公司V5.docx 跟公司A的投标文件有90%段落雷同,想给公司A做B-2风格差异化扩写。",
+    "rationale": "陷阱:差异化扩写是Prompt模板技能,本技能只做格式",
+    "should_trigger": false
+  },
+  {
+    "id": 14,
+    "type": "should_not_trigger",
+    "expected_skill": "投标评分点拆解",
+    "query": "招标文件的评分标准章节,逐条拆成可执行任务清单,映射到应答文件章节。",
+    "rationale": "陷阱:评分点拆解,不是格式规范",
+    "should_trigger": false
+  },
+  {
+    "id": 15,
+    "type": "should_not_trigger",
+    "expected_skill": "招标资质快速识别与提取",
+    "query": "招标要求CMMI5、ISO9001这些资质,我们公司有哪些?哪些缺项?",
+    "rationale": "陷阱:资质识别,不是格式",
+    "should_trigger": false
+  },
+  {
+    "id": 16,
+    "type": "should_not_trigger",
+    "expected_skill": "串标检测工程化封装",
+    "query": "公司A、B、C三个投标人的工商信息、IP、设备指纹,做围标串标风险自检。",
+    "rationale": "陷阱:围标检测,不是格式",
+    "should_trigger": false
+  },
+  {
+    "id": 17,
+    "type": "should_not_trigger",
+    "expected_skill": "客户需求产品匹配分析技能",
+    "query": "招标说需要数据治理+可视化大屏+AI分析,我们公司哪些产品能匹配?",
+    "rationale": "陷阱:产品匹配,不是格式",
+    "should_trigger": false
+  },
+  {
+    "id": 18,
+    "type": "should_not_trigger",
+    "expected_skill": "投标项目全流程管理",
+    "query": "我们有个50万的招标项目,招标书读完了,要不要应标?",
+    "rationale": "陷阱:应标决策,不是格式",
+    "should_trigger": false
+  },
+  {
+    "id": 19,
+    "type": "should_not_trigger",
+    "expected_skill": "pptx-enterprise",
+    "query": "我有一个应答文件的内容,想转成PPT给领导汇报,要做20页。",
+    "rationale": "陷阱:PPT是pptx-enterprise,不是docx格式",
+    "should_trigger": false
+  },
+  {
+    "id": 20,
+    "type": "should_not_trigger",
+    "expected_skill": "docx",
+    "query": "怎么用python-docx读取docx的段落、表格、样式?给个示例代码。",
+    "rationale": "陷阱:通用docx操作,本技能是格式规范汇总",
+    "should_trigger": false
+  }
+]

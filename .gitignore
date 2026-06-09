@@ -40,3 +40,9 @@ __pycache__/
 .env
 .env.local
 *.local
+
+# Backup / intermediate files
+*.bak
+*.wrapped
+*.original
+*.tmp

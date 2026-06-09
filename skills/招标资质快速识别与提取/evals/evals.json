@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "type": "should_trigger",
+    "query": "招标文件里要求CMMI5、ISO9001这些资质,我们公司有哪些?哪些缺项?给我清单。",
+    "rationale": "skill 核心场景:招标资质快速识别 + 准备清单",
+    "should_trigger": true
+  },
+  {
+    "id": 2,
+    "type": "should_trigger",
+    "query": "招标要求'近3年承担过3个类似项目',我们有哪些合同满足这个条件?还要提供哪些证明材料?",
+    "rationale": "业绩要求类(技能显式A类条款)+ 准备清单",
+    "should_trigger": true
+  },
+  {
+    "id": 3,
+    "type": "should_trigger",
+    "query": "招标文件要求'注册资本不低于5000万'、'近2年连续盈利'、'资产负债率≤85%',这些我们能达标吗?看审计报告。",
+    "rationale": "财务要求类(技能显式A类条款)+ 财务识别规则",
+    "should_trigger": true
+  },
+  {
+    "id": 4,
+    "type": "should_trigger",
+    "query": "招标要求项目负责人须具有PMP证书+高级工程师≥3人,这些人员我们公司有吗?社保证明怎么开?",
+    "rationale": "人员资质类(技能显式A类条款)+ 社保证明要求",
+    "should_trigger": true
+  },
+  {
+    "id": 5,
+    "type": "should_trigger",
+    "query": "招标文件提到'通过CMMI5认证优先'、'具有XX行业经验者优先',这些是加分项还是硬性门槛?",
+    "rationale": "B类评审加分项识别(技能显式分类)",
+    "should_trigger": true
+  },
+  {
+    "id": 6,
+    "type": "should_trigger",
+    "query": "招标文件'投标人资格要求'章节里提到的资质条款,帮我逐条提取、分级为A类硬性门槛/B类加分项/C类格式要求。",
+    "rationale": "技能核心工作流:逐条提取 + 三级分类",
+    "should_trigger": true
+  },
+  {
+    "id": 7,
+    "type": "should_trigger",
+    "query": "招标资质准备清单:哪些资质是必须满足的(缺一废标)?哪些是加分项(有则加分)?给我个准备清单模板。",
+    "rationale": "技能显式给出的资质准备清单模板",
+    "should_trigger": true
+  },
+  {
+    "id": 8,
+    "type": "should_trigger",
+    "query": "招标要求'原厂授权'、'代理商资质'、'制造厂商授权',这些是A类门槛吗?怎么判断?",
+    "rationale": "授权要求类(技能显式A类条款)",
+    "should_trigger": true
+  },
+  {
+    "id": 9,
+    "type": "should_trigger",
+    "query": "拿到招标文件,先做资质识别的子模块:定位'投标人资格要求'章节,提取A类硬性门槛和B类加分项,生成准备清单。",
+    "rationale": "skill 显式给出的快速识别三步流程",
+    "should_trigger": true
+  },
+  {
+    "id": 10,
+    "type": "should_trigger",
+    "query": "联合体投标:各方资质要求可能不同,帮我分别列明A/B/C三类要求,以及各方需提供的材料。",
+    "rationale": "联合体投标场景(技能显式注意事项)+ 资质分类",
+    "should_trigger": true
+  },
+  {
+    "id": 11,
+    "type": "should_not_trigger",
+    "expected_skill": "投标项目全流程管理",
+    "query": "我们有个50万的招标项目,招标书读完了,要不要应标?时间够吗?给我评估框架。",
+    "rationale": "陷阱:应标决策是流程管理,本技能是资质子模块",
+    "should_trigger": false
+  },
+  {
+    "id": 12,
+    "type": "should_not_trigger",
+    "expected_skill": "投标评分点拆解",
+    "query": "招标文件的评分标准章节,逐条拆成可执行任务清单,映射到应答文件章节。",
+    "rationale": "陷阱:评分点拆解,不是资质识别",
+    "should_trigger": false
+  },
+  {
+    "id": 13,
+    "type": "should_not_trigger",
+    "expected_skill": "串标检测工程化封装",
+    "query": "公司A、B、C三个投标人的工商信息、IP、设备指纹,做围标串标风险自检。",
+    "rationale": "陷阱:围标检测,不是资质识别",
+    "should_trigger": false
+  },
+  {
+    "id": 14,
+    "type": "should_not_trigger",
+    "expected_skill": "技术应答文件批量编制技能",
+    "query": "我们公司要投标,基于招标技术要求帮我生成一份完整的技术应答文件。",
+    "rationale": "陷阱:内容生成是批量编制,本技能只做资质识别",
+    "should_trigger": false
+  },
+  {
+    "id": 15,
+    "type": "should_not_trigger",
+    "expected_skill": "Word文档扩写与标题优化技能",
+    "query": "技术应答文件每个章节太单薄,帮我扩写到5倍以上。",
+    "rationale": "陷阱:内容扩写是Word扩写,本技能只做资质",
+    "should_trigger": false
+  },
+  {
+    "id": 16,
+    "type": "should_not_trigger",
+    "expected_skill": "差异化扩写Prompt模板",
+    "query": "主公司V5.docx 跟公司A的投标文件有90%段落雷同,想给公司A做B-2风格差异化扩写。",
+    "rationale": "陷阱:差异化扩写,本技能不涉及内容",
+    "should_trigger": false
+  },
+  {
+    "id": 17,
+    "type": "should_not_trigger",
+    "expected_skill": "客户需求产品匹配分析技能",
+    "query": "招标说需要数据治理+可视化大屏+AI分析,我们公司哪些产品能匹配?",
+    "rationale": "陷阱:产品匹配,不是资质",
+    "should_trigger": false
+  },
+  {
+    "id": 18,
+    "type": "should_not_trigger",
+    "expected_skill": "投标文件格式规范手册",
+    "query": "投标文件的字号应该是几号字?行距?页边距?",
+    "rationale": "陷阱:格式规范,本技能只做资质",
+    "should_trigger": false
+  },
+  {
+    "id": 19,
+    "type": "should_not_trigger",
+    "expected_skill": "docx",
+    "query": "怎么用python-docx读取docx的资质证书附件?",
+    "rationale": "陷阱:通用docx操作,本技能不教具体代码",
+    "should_trigger": false
+  },
+  {
+    "id": 20,
+    "type": "should_not_trigger",
+    "expected_skill": "工商信息查询API",
+    "query": "调用企查查API查我们公司的营业执照信息。",
+    "rationale": "陷阱:具体API调用,本技能使用资质结果而非教查询",
+    "should_trigger": false
+  }
+]

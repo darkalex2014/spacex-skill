@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "type": "should_trigger",
+    "prompt": "我刚拿到一份招标文件的 PDF，里面有个评标办法章节，能帮我把里面的评分点逐条拆出来吗？拆完我想知道每个评分项的满分、评分标准、要写在应答文件的哪一章。",
+    "rationale": "完整场景，标准问法——直接对应 skill 的核心工作流",
+    "should_trigger": true,
+    "query": "我刚拿到一份招标文件的 PDF，里面有个评标办法章节，能帮我把里面的评分点逐条拆出来吗？拆完我想知道每个评分项的满分、评分标准、要写在应答文件的哪一章。"
+  },
+  {
+    "id": 2,
+    "type": "should_trigger",
+    "prompt": "招标文件评分表里写了'技术方案 30 分、项目理解 10 分、实施进度 8 分'，能帮我对应到技术应答文件的章节，并告诉我哪些章节需要重点扩写吗？",
+    "rationale": "关注'分值→章节'映射——skill 核心输出",
+    "should_trigger": true,
+    "query": "招标文件评分表里写了'技术方案 30 分、项目理解 10 分、实施进度 8 分'，能帮我对应到技术应答文件的章节，并告诉我哪些章节需要重点扩写吗？"
+  },
+  {
+    "id": 3,
+    "type": "should_trigger",
+    "prompt": "boss 让我做应标自检——看下我们的技术应答文件有没有覆盖评分表里所有得分点，每个章节的字数和分值是不是匹配。能不能给我一个自检报告？",
+    "rationale": "应标自检场景——skill 第二大工作流",
+    "should_trigger": true,
+    "query": "boss 让我做应标自检——看下我们的技术应答文件有没有覆盖评分表里所有得分点，每个章节的字数和分值是不是匹配。能不能给我一个自检报告？"
+  },
+  {
+    "id": 4,
+    "type": "should_trigger",
+    "prompt": "这次评分表里有'项目理解'、'需求分析'、'总体设计'、'详细设计'、'测试方案'这些大项，每项 5-15 分不等。能否帮我列个任务清单，分配给团队几个人分别写？",
+    "rationale": "拆解为可执行任务——skill 输出形式之一",
+    "should_trigger": true,
+    "query": "这次评分表里有'项目理解'、'需求分析'、'总体设计'、'详细设计'、'测试方案'这些大项，每项 5-15 分不等。能否帮我列个任务清单，分配给团队几个人分别写？"
+  },
+  {
+    "id": 5,
+    "type": "should_trigger",
+    "prompt": "我们打算投一个政务云的项目，招标文件 200 页，评分办法在第 8 章。能不能把第 8 章的评分点全拆出来，按'权重/章节/得分要点/状态'做个表给我？",
+    "rationale": "真实场景（具体行业+页数+章节定位）",
+    "should_trigger": true,
+    "query": "我们打算投一个政务云的项目，招标文件 200 页，评分办法在第 8 章。能不能把第 8 章的评分点全拆出来，按'权重/章节/得分要点/状态'做个表给我？"
+  },
+  {
+    "id": 6,
+    "type": "should_trigger",
+    "prompt": "客户要求我们做'差异化优势应答'——能否根据评分点判断哪些是我们的强项可以重点放大，哪些是弱项需要规避？",
+    "rationale": "高级应用（基于评分点的策略建议）",
+    "should_trigger": true,
+    "query": "客户要求我们做'差异化优势应答'——能否根据评分点判断哪些是我们的强项可以重点放大，哪些是弱项需要规避？"
+  },
+  {
+    "id": 7,
+    "type": "should_trigger",
+    "prompt": "招标方对'技术方案完整性'给了 20 分，但描述写得很模糊——'方案完整、架构合理、技术先进得 15-20 分；方案基本完整得 8-14 分'。这种模糊的档次怎么拆？对应答有什么建议？",
+    "rationale": "边缘情况（评分档次模糊时的处理）",
+    "should_trigger": true,
+    "query": "招标方对'技术方案完整性'给了 20 分，但描述写得很模糊——'方案完整、架构合理、技术先进得 15-20 分；方案基本完整得 8-14 分'。这种模糊的档次怎么拆？对应答有什么建议？"
+  },
+  {
+    "id": 8,
+    "type": "should_trigger",
+    "prompt": "我有个旧的应答文件草稿和新的招标文件，怎么对比看我的草稿覆盖了评分点的百分之多少？哪些评分项还没覆盖？",
+    "rationale": "覆盖率计算场景",
+    "should_trigger": true,
+    "query": "我有个旧的应答文件草稿和新的招标文件，怎么对比看我的草稿覆盖了评分点的百分之多少？哪些评分项还没覆盖？"
+  },
+  {
+    "id": 9,
+    "type": "should_trigger",
+    "prompt": "评审前最后一次检查——除了'覆盖所有得分点'，还有哪些常见的丢分坑？（比如必答条件、资质材料、签字盖章）",
+    "rationale": "应答前自检 + 风险清单",
+    "should_trigger": true,
+    "query": "评审前最后一次检查——除了'覆盖所有得分点'，还有哪些常见的丢分坑？（比如必答条件、资质材料、签字盖章）"
+  },
+  {
+    "id": 10,
+    "type": "should_trigger",
+    "prompt": "招标方给了个评分标准，技术标占 60%、商务标 30%、报价 10%。我想知道技术标里哪些是高分项（>5 分），需要重点投入。",
+    "rationale": "风险识别+优先级排序",
+    "should_trigger": true,
+    "query": "招标方给了个评分标准，技术标占 60%、商务标 30%、报价 10%。我想知道技术标里哪些是高分项（>5 分），需要重点投入。"
+  },
+  {
+    "id": 11,
+    "type": "should_not_trigger",
+    "expected_skill": "投标项目全流程管理",
+    "prompt": "拿到招标文件后，先告诉我这个项目值不值得投——预算多少、我们有没有资质、能不能赚钱。",
+    "rationale": "陷阱：'投标前判断'是「投标项目全流程管理」职责，不是评分拆解",
+    "should_trigger": false,
+    "query": "拿到招标文件后，先告诉我这个项目值不值得投——预算多少、我们有没有资质、能不能赚钱。",
+    "expected_output": "skill '投标项目全流程管理' should handle this"
+  },
+  {
+    "id": 12,
+    "type": "should_not_trigger",
+    "expected_skill": "投标文件格式规范手册",
+    "prompt": "招标文件的格式要求很复杂——字体字号、页眉页脚、目录格式、装订顺序，能帮我整理一个格式规范吗？",
+    "rationale": "陷阱：格式规范而非评分拆解",
+    "should_trigger": false,
+    "query": "招标文件的格式要求很复杂——字体字号、页眉页脚、目录格式、装订顺序，能帮我整理一个格式规范吗？",
+    "expected_output": "skill '投标文件格式规范手册' should handle this"
+  },
+  {
+    "id": 13,
+    "type": "should_not_trigger",
+    "expected_skill": "技术应答文件批量编制技能",
+    "prompt": "基于这份招标文件的评分点，帮我直接生成技术应答文件的全部章节内容——每个章节 3000 字以上。",
+    "rationale": "陷阱：生成正文而非拆解评分点（拆解是前置步骤）",
+    "should_trigger": false,
+    "query": "基于这份招标文件的评分点，帮我直接生成技术应答文件的全部章节内容——每个章节 3000 字以上。",
+    "expected_output": "skill '技术应答文件批量编制技能' should handle this"
+  },
+  {
+    "id": 14,
+    "type": "should_not_trigger",
+    "expected_skill": "投标项目全流程管理",
+    "prompt": "我投标团队的 3 个人怎么分工？任务怎么排期、截止日期怎么倒推？",
+    "rationale": "陷阱：任务分解而非评分拆解",
+    "should_trigger": false,
+    "query": "我投标团队的 3 个人怎么分工？任务怎么排期、截止日期怎么倒推？",
+    "expected_output": "skill '投标项目全流程管理' should handle this"
+  },
+  {
+    "id": 15,
+    "type": "should_not_trigger",
+    "expected_skill": "投标项目全流程管理",
+    "prompt": "评审结束后，中标或落标的复盘应该写些什么？哪些数据要归档？",
+    "rationale": "陷阱：投标后复盘阶段",
+    "should_trigger": false,
+    "query": "评审结束后，中标或落标的复盘应该写些什么？哪些数据要归档？",
+    "expected_output": "skill '投标项目全流程管理' should handle this"
+  },
+  {
+    "id": 16,
+    "type": "should_not_trigger",
+    "expected_skill": "pdf",
+    "prompt": "技术应答文件写完怎么转成 PDF？用 PptxGenJS 还是 reportlab？",
+    "rationale": "陷阱：文档生成工具而非评分拆解",
+    "should_trigger": false,
+    "query": "技术应答文件写完怎么转成 PDF？用 PptxGenJS 还是 reportlab？",
+    "expected_output": "skill 'pdf' should handle this"
+  },
+  {
+    "id": 17,
+    "type": "should_not_trigger",
+    "expected_skill": "差异化扩写Prompt模板",
+    "prompt": "我们公司去年中了 3 个标，每个标的客户行业都不同。复盘下来，发现有共同的强项和弱项，能分析下吗？",
+    "rationale": "陷阱：复盘分析而非评分拆解",
+    "should_trigger": false,
+    "query": "我们公司去年中了 3 个标，每个标的客户行业都不同。复盘下来，发现有共同的强项和弱项，能分析下吗？",
+    "expected_output": "skill '差异化扩写Prompt模板' should handle this"
+  },
+  {
+    "id": 18,
+    "type": "should_not_trigger",
+    "expected_skill": "投标文件格式规范手册",
+    "prompt": "招标文件的 200 页里有一半是合规条款、资质要求、合同模板，评分表其实只有几页。我只想看评分表的部分。",
+    "rationale": "陷阱：表面提到招标文件，实质是'文档定位/摘取'而非评分拆解",
+    "should_trigger": false,
+    "query": "招标文件的 200 页里有一半是合规条款、资质要求、合同模板，评分表其实只有几页。我只想看评分表的部分。",
+    "expected_output": "skill '投标文件格式规范手册' should handle this"
+  },
+  {
+    "id": 19,
+    "type": "should_not_trigger",
+    "expected_skill": "客户需求产品匹配分析技能",
+    "prompt": "我们公司有什么产品能匹配这个招标项目的需求？",
+    "rationale": "陷阱：产品匹配而非评分拆解",
+    "should_trigger": false,
+    "query": "我们公司有什么产品能匹配这个招标项目的需求？",
+    "expected_output": "skill '客户需求产品匹配分析技能' should handle this"
+  },
+  {
+    "id": 20,
+    "type": "should_not_trigger",
+    "expected_skill": "差异化扩写Prompt模板",
+    "prompt": "这次投标要做差异化创新——除了'满足评分点'，还有什么能让我们脱颖而出的角度？",
+    "rationale": "陷阱：创新策略而非评分拆解",
+    "should_trigger": false,
+    "query": "这次投标要做差异化创新——除了'满足评分点'，还有什么能让我们脱颖而出的角度？",
+    "expected_output": "skill '差异化扩写Prompt模板' should handle this"
+  }
+]

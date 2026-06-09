@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "type": "should_trigger",
+    "query": "基于这次的评分点拆解报告（项目理解 10 分、技术方案 30 分、实施进度 8 分），帮我直接生成技术应答文件，每个章节 3000 字以上。",
+    "rationale": "核心场景：基于评分点生成大段正文（多公司模式的输入端）",
+    "should_trigger": true
+  },
+  {
+    "id": 2,
+    "type": "should_trigger",
+    "query": "我们主公司的 V4.docx 已经写好了，招标要求 3 家公司联合投标——帮我生成 A 公司和 B 公司的差异化版本（要防围标串标）。",
+    "rationale": "多公司模式：基于主参考文件生成 A/B 差异化版本 + 串标检测",
+    "should_trigger": true
+  },
+  {
+    "id": 3,
+    "type": "should_trigger",
+    "query": "主公司 V5.docx 和 A 公司 V5.docx 的相似度检测报告出来，告诉我哪些段落 ≥70% 雷同，需要扩写。",
+    "rationale": "围标串标检测（skill 模块二核心）",
+    "should_trigger": true
+  },
+  {
+    "id": 4,
+    "type": "should_trigger",
+    "query": "我手上两个文件雷同度 85%，按规则要扩写 2 倍以上。用五倍扩写法把这两段关键岗位人员配置改写一下。",
+    "rationale": "差异化扩写（模块三）+ 触发 5x 阈值规则",
+    "should_trigger": true
+  },
+  {
+    "id": 5,
+    "type": "should_trigger",
+    "query": "这个项目只要单一主体投标（江西银行），帮我按单公司模式生成主公司 V5 应答文件。",
+    "rationale": "单公司模式（显式调用）",
+    "should_trigger": true
+  },
+  {
+    "id": 6,
+    "type": "should_trigger",
+    "query": "我有个扩写版的第 26-28 章 .docx，但字数严重不达标——帮我用 expand_sections_5x 跑一遍扩写，扩到 5000 字以上。",
+    "rationale": "expand_sections 扩写模式（模块四 + 5x 脚本）",
+    "should_trigger": true
+  },
+  {
+    "id": 7,
+    "type": "should_trigger",
+    "query": "国网信通这个项目，招标文件要求主公司+亿力科技+其他关联公司陪标——按多公司模式给我生成完整的三份差异化文件，并跑串标检测。",
+    "rationale": "多公司模式典型项目（国网信通是 skill 显式提到的例子）",
+    "should_trigger": true
+  },
+  {
+    "id": 8,
+    "type": "should_trigger",
+    "query": "我准备做差异化扩写，针对主公司基准版给 A 公司应用 A-2+B-2+C-2+D-2 策略组合——生成完整 6 章差异化内容。",
+    "rationale": "显式指定差异化策略组合（A/B/C/D 编号）",
+    "should_trigger": true
+  },
+  {
+    "id": 9,
+    "type": "should_trigger",
+    "query": "已经基于评分点生成了初版应答文件 V4.docx，按 V4→V5 迭代规范帮我升级到 V5，并自动跑串标检测 + 扩写。",
+    "rationale": "V4→V5 完整迭代流程（skill 显式给出）",
+    "should_trigger": true
+  },
+  {
+    "id": 10,
+    "type": "should_trigger",
+    "query": "我的应答文件各章节字数差距很大，有的 800 字有的 5000 字——用 check_sizes 验证一下，输出平衡报告。",
+    "rationale": "技能自带的验证脚本（check_sizes / check_structure / check_expanded）",
+    "should_trigger": true
+  },
+  {
+    "id": 11,
+    "type": "should_not_trigger",
+    "expected_skill": "投标评分点拆解",
+    "query": "拿到招标文件后，帮我把里面评分表的每个评分项拆成可执行任务清单。",
+    "rationale": "陷阱：拆解评分点是子 skill 职责，不是编制正文",
+    "should_trigger": false
+  },
+  {
+    "id": 12,
+    "type": "should_not_trigger",
+    "expected_skill": "投标文件格式规范手册",
+    "query": "技术应答文件的格式要求很复杂——字体字号、页眉页脚、目录格式、装订顺序怎么整理？",
+    "rationale": "陷阱：格式规范而非内容生成",
+    "should_trigger": false
+  },
+  {
+    "id": 13,
+    "type": "should_not_trigger",
+    "expected_skill": "投标项目全流程管理",
+    "query": "这个项目我们公司最近在跟 3 个，怎么决定哪个重点投、哪个放弃？",
+    "rationale": "陷阱：应标决策是流程管理 skill 职责",
+    "should_trigger": false
+  },
+  {
+    "id": 14,
+    "type": "should_not_trigger",
+    "expected_skill": "差异化扩写Prompt模板",
+    "query": "我们想做一个差异化突出的技术方案——除了'满足评分点'还有什么创新角度？",
+    "rationale": "陷阱：差异化策略思维，而非具体生成",
+    "should_trigger": false
+  },
+  {
+    "id": 15,
+    "type": "should_not_trigger",
+    "expected_skill": "docx",
+    "query": "怎么用 python-docx 创建一个带表格的 docx 文件？给个示例代码。",
+    "rationale": "陷阱：通用 docx 操作，不限于投标场景",
+    "should_trigger": false
+  },
+  {
+    "id": 16,
+    "type": "should_not_trigger",
+    "expected_skill": "pptx",
+    "query": "我有一个应答文件的内容，想转成 PPT 给领导汇报，用 PptxGenJS 怎么搞？",
+    "rationale": "陷阱：PPT 制作而非 DOCX 生成",
+    "should_trigger": false
+  },
+  {
+    "id": 17,
+    "type": "should_not_trigger",
+    "expected_skill": "招标资质快速识别与提取",
+    "query": "招标文件里要求 CMMI5、ISO9001、信息安全等保三级这些资质，我们公司有哪些？",
+    "rationale": "陷阱：单点资质识别，不是正文生成",
+    "should_trigger": false
+  },
+  {
+    "id": 18,
+    "type": "should_not_trigger",
+    "expected_skill": "投标项目全流程管理",
+    "query": "投标截止日还有 7 天，但还有 60% 的工作没做完，帮我排一下接下来每天的进度。",
+    "rationale": "陷阱：进度跟踪是流程管理 skill",
+    "should_trigger": false
+  },
+  {
+    "id": 19,
+    "type": "should_not_trigger",
+    "expected_skill": "客户需求产品匹配分析技能",
+    "query": "招标说需要数据治理+可视化大屏+AI 分析，我们公司哪些产品能匹配？",
+    "rationale": "陷阱：产品能力匹配，不是正文",
+    "should_trigger": false
+  },
+  {
+    "id": 20,
+    "type": "should_not_trigger",
+    "expected_skill": "需求产品自研判断技能",
+    "query": "客户要'实时数据同步、毫秒级延迟'，我们目前产品达不到，是否要自研？",
+    "rationale": "陷阱：技术评估/自研判断",
+    "should_trigger": false
+  }
+]

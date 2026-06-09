@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "type": "should_trigger",
+    "query": "刚拿到一份招标文件的 PDF，我该先做什么？要从头到尾过一遍吗？",
+    "rationale": "投标前的'招标文件解析+应标判断'全流程入口",
+    "should_trigger": true
+  },
+  {
+    "id": 2,
+    "type": "should_trigger",
+    "query": "我们公司最近在跟 3 个投标项目，怎么决定哪个该重点投、哪个战略性放弃？",
+    "rationale": "跨项目应标判断 + 资源分配策略",
+    "should_trigger": true
+  },
+  {
+    "id": 3,
+    "type": "should_trigger",
+    "query": "招标文件里要求 3 家子公司联合投标（多公司模式），这种情况下我们怎么分工、谁负责哪部分？",
+    "rationale": "多公司模式管理（skill 显式提到的特殊模式）",
+    "should_trigger": true
+  },
+  {
+    "id": 4,
+    "type": "should_trigger",
+    "query": "这个项目已经开标了但是我们没中标，能帮我做一次复盘吗？看看下次怎么改进。",
+    "rationale": "投标后复盘（skill 第三阶段核心）",
+    "should_trigger": true
+  },
+  {
+    "id": 5,
+    "type": "should_trigger",
+    "query": "我们公司今年中了 5 个标，怎么把这些成功经验沉淀下来，让以后新投标能复用？",
+    "rationale": "知识库/业绩库归档（skill 第三阶段）",
+    "should_trigger": true
+  },
+  {
+    "id": 6,
+    "type": "should_trigger",
+    "query": "投标截止日还有 7 天，但还有 60% 的工作没做完——给我排一下接下来每天的进度和优先级。",
+    "rationale": "进度跟踪 + 里程碑管理（第二阶段）",
+    "should_trigger": true
+  },
+  {
+    "id": 7,
+    "type": "should_trigger",
+    "query": "帮我建一个投标项目的目录结构，按 06 标书制作专区的规范来，里面要放招标文件、应答文件、复盘记录这些。",
+    "rationale": "目录规范（skill 显式给出）",
+    "should_trigger": true
+  },
+  {
+    "id": 8,
+    "type": "should_trigger",
+    "query": "这个项目已经做了 3 周，技术方案、商务材料、报价测算都到了 V3 版本，现在距离截止还有 5 天，接下来怎么走？",
+    "rationale": "现有项目状态评估 + 下一步计划",
+    "should_trigger": true
+  },
+  {
+    "id": 9,
+    "type": "should_trigger",
+    "query": "帮我开一个'政务云采购'的投标项目跟踪，从今天开始记录每个阶段的进展。",
+    "rationale": "新项目立项+三阶段跟踪",
+    "should_trigger": true
+  },
+  {
+    "id": 10,
+    "type": "should_trigger",
+    "query": "我们今年投了 20 个标，中了 3 个，胜率 15%，这个数据怎么看？怎么判断明年该不该继续重点投？",
+    "rationale": "复盘+战略决策（不只是历史记录，是 actionable insight）",
+    "should_trigger": true
+  },
+  {
+    "id": 11,
+    "type": "should_not_trigger",
+    "expected_skill": "投标评分点拆解",
+    "query": "拿到招标文件后，能帮我把里面评分表的每个评分项拆成任务清单吗？",
+    "rationale": "陷阱：拆解评分点是子 skill 职责，不是全流程",
+    "should_trigger": false
+  },
+  {
+    "id": 12,
+    "type": "should_not_trigger",
+    "expected_skill": "技术应答文件批量编制技能",
+    "query": "基于这份招标文件的评分点，帮我直接生成技术应答文件的全部章节内容，每个章节 3000 字以上。",
+    "rationale": "陷阱：生成正文而非管理流程",
+    "should_trigger": false
+  },
+  {
+    "id": 13,
+    "type": "should_not_trigger",
+    "expected_skill": "投标文件格式规范手册",
+    "query": "招标文件的格式要求很复杂——字体字号、页眉页脚、目录格式、装订顺序，整理一个格式规范。",
+    "rationale": "陷阱：格式规范而非流程管理",
+    "should_trigger": false
+  },
+  {
+    "id": 14,
+    "type": "should_not_trigger",
+    "expected_skill": "差异化扩写Prompt模板",
+    "query": "我们想做一个差异化突出的技术方案——除了'满足评分点'还有什么角度？",
+    "rationale": "陷阱：差异化策略而非流程",
+    "should_trigger": false
+  },
+  {
+    "id": 15,
+    "type": "should_not_trigger",
+    "expected_skill": "客户需求产品匹配分析技能",
+    "query": "这次招标里客户说要数据治理+可视化大屏+AI 分析，我们公司哪些产品能匹配？",
+    "rationale": "陷阱：产品匹配而非投标流程",
+    "should_trigger": false
+  },
+  {
+    "id": 16,
+    "type": "should_not_trigger",
+    "expected_skill": "招标资质快速识别与提取",
+    "query": "招标文件里要求'CMMI5、ISO9001、信息安全等保三级'这些资质，我们公司有哪些？",
+    "rationale": "陷阱：单点资质识别，不是全流程",
+    "should_trigger": false
+  },
+  {
+    "id": 17,
+    "type": "should_not_trigger",
+    "expected_skill": "投标评分点拆解",
+    "query": "招标文件的 200 页里有一半是合规条款、资质要求、合同模板，评分表其实只有几页。我只想看评分表的部分。",
+    "rationale": "陷阱：表面提到招标文件，实质是文档定位/摘取",
+    "should_trigger": false
+  },
+  {
+    "id": 18,
+    "type": "should_not_trigger",
+    "expected_skill": "会议纪要生成技能",
+    "query": "我们昨天开了一个投标前的 kick-off 会议，能帮我把会议记录整理成会议纪要？",
+    "rationale": "陷阱：会议纪要格式而非投标流程",
+    "should_trigger": false
+  },
+  {
+    "id": 19,
+    "type": "should_not_trigger",
+    "expected_skill": "产合商机周报生成模板",
+    "query": "本周我们跟进了 5 个潜在项目，帮我生成一个商机周报给销售总监。",
+    "rationale": "陷阱：周报生成而非投标管理",
+    "should_trigger": false
+  },
+  {
+    "id": 20,
+    "type": "should_not_trigger",
+    "expected_skill": "需求产品自研判断技能",
+    "query": "客户招标里说需要'实时数据同步、毫秒级延迟'，我们目前的产品达不到，是否要自研？",
+    "rationale": "陷阱：技术评估/自研判断，而非投标流程",
+    "should_trigger": false
+  }
+]
